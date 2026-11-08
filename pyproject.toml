@@ -55,7 +55,13 @@ anjali = "anjali.cli.main:app"
 where = ["src"]
 
 [tool.setuptools.package-data]
-anjali = ["kb/corpus/*.yaml", "data/*.yaml", "data/*.json", "py.typed"]
+anjali = [
+    "kb/corpus/*.yaml",
+    "data/*.yaml",
+    "data/*.json",
+    "data/samples/*.csv",
+    "py.typed",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

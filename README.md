@@ -224,7 +224,7 @@ the deterministic pipeline rather than pretending to be a model.
 pip install -e ".[dev]"
 pytest                 # 116 tests, ~3s
 ruff check src tests
-python scripts/generate_demo_data.py   # regenerate data/samples deterministically
+python scripts/generate_demo_data.py   # regenerate the demo fixtures (src/anjali/data/samples)
 ```
 
 Layout: `core` (models, config, db) · `providers` (HTTP LLM clients) · `rag` (embedder, chunker,

@@ -15,7 +15,7 @@ import random
 from datetime import datetime, timedelta
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parents[1] / "data" / "samples"
+OUT = Path(__file__).resolve().parents[1] / "src" / "anjali" / "data" / "samples"
 START = datetime(2025, 10, 1, 9, 0)
 RNG = random.Random(20261108)
 

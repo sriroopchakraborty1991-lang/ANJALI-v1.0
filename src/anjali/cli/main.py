@@ -160,17 +160,27 @@ def init(
             from anjali.analysis.engine import analyze, build_context
             from anjali.analysis.ingest import load_customers, load_transactions, persist
 
-            data_dir = Path(__file__).resolve().parents[3] / "data" / "samples"
-            txns, _ = load_transactions(data_dir / "demo_transactions.csv", dataset="demo")
-            customers, _ = load_customers(data_dir / "demo_customers.csv")
-            persist(state.db, txns, customers, dataset="demo")
-            ctx_analysis = build_context(txns, customers)
-            result = analyze(ctx_analysis, kb=kb, case_id="demo-2026", db=state.db)
-            console.print(
-                f"[green]✓[/green] demo case loaded: {len(txns)} transactions, "
-                f"{len(customers)} customers, {len(result.findings)} findings, "
-                f"risk {result.risk.overall} ({result.risk.band.value})"
-            )
+            # The fixtures ship inside the package (anjali/data/samples), so this works
+            # from a wheel as well as from a source checkout.
+            data_dir = Path(__file__).resolve().parents[1] / "data" / "samples"
+            txn_file = data_dir / "demo_transactions.csv"
+            cust_file = data_dir / "demo_customers.csv"
+            if not (txn_file.exists() and cust_file.exists()):
+                console.print(
+                    "[yellow]![/yellow] demo fixtures not found — skipping the sample case "
+                    "[dim](run scripts/generate_demo_data.py in a source checkout)[/dim]"
+                )
+            else:
+                txns, _ = load_transactions(txn_file, dataset="demo")
+                customers, _ = load_customers(cust_file)
+                persist(state.db, txns, customers, dataset="demo")
+                ctx_analysis = build_context(txns, customers)
+                result = analyze(ctx_analysis, kb=kb, case_id="demo-2026", db=state.db)
+                console.print(
+                    f"[green]✓[/green] demo case loaded: {len(txns)} transactions, "
+                    f"{len(customers)} customers, {len(result.findings)} findings, "
+                    f"risk {result.risk.overall} ({result.risk.band.value})"
+                )
 
         audit = state.audit()
         if audit:
