@@ -12,7 +12,7 @@ rather than what it aspires to.
 ### Added
 
 **Corpus and retrieval**
-- 74 regulatory provisions across the US (28), EU (18), UK (10), FATF (11) and international (7)
+- 76 regulatory provisions across the US (30), EU (18), UK (10), FATF (11) and international (7)
   collections, each with citation, regulator, effective dates, successors, obligations, source URL
   and full text.
 - Temporal retrieval: `--as-of` scoping, amendment/successor tracking, and `[NOT-YET-IN-FORCE]`

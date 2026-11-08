@@ -22,7 +22,7 @@ cli/         main.py  state.py  render.py  kb_cmds.py  case_cmds.py  compliance_
 
 `ANJALI_HOME` (default `~/.anjali`) holds `config.json`, `keys.toml` (0600), `anjali.db`,
 `audit.jsonl` and `cache/`. Only SQLite — WAL mode, FTS5, `schema_version` in `meta` — is used
-for state. No vector database is required: the corpus is 74 documents, and a local TF-IDF
+for state. No vector database is required: the corpus is 76 documents, and a local TF-IDF
 embedder (`hashtfidf-v1`, feature-hashed, no download) keeps the install offline-capable. The
 `KnowledgeBase` API is embedder-agnostic, so an API embedder can be configured without changing
 the retrieval code.

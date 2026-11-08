@@ -44,7 +44,7 @@ future-law questions is a good trade for never presenting 2027 obligations as to
 
 ## 5. SQLite FTS5 instead of a vector database
 
-74 documents do not justify an embedding service. A feature-hashed TF-IDF embedder plus FTS5 with
+76 documents do not justify an embedding service. A feature-hashed TF-IDF embedder plus FTS5 with
 ontology expansion gets the retrieval quality that matters here (exact citation lookup, typology
 terms, jurisdiction filtering) with zero network dependency and a single file to back up. The
 `KnowledgeBase` interface is embedder-agnostic: point it at an API embedder and the rest of the

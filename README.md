@@ -40,7 +40,7 @@ Severity   Typology              Finding                                        
                                  above it.
  …
 
-Risk 80.0/100 (CRITICAL) · 8 findings · corpus 74 docs · audit 3f9c1ab22d4e
+Risk 80.0/100 (CRITICAL) · 8 findings · corpus 76 docs · audit 3f9c1ab22d4e
 ```
 
 ---
@@ -87,7 +87,7 @@ anjali simulate --fail-under 0.9              # red-team the detectors, fail CI 
 anjali audit verify                           # prove the log has not been altered
 ```
 
-`anjali init` is self-contained: it ingests the 74-document corpus into SQLite FTS5, loads the
+`anjali init` is self-contained: it ingests the 76-document corpus into SQLite FTS5, loads the
 synthetic sanctions fixtures, and imports the demo case (363 transactions, 15 customers).
 
 ## Command map
@@ -122,7 +122,7 @@ Every command takes `--json` for pipelines; global flags are `--home`, `--provid
    your data ──▶│  ingest       │───────────────▶│  SQLite (WAL)    │
                 └───────────────┘   normalised   │  cases, audit,   │
                                                 │  FTS5 corpus     │
-   74 provisions ──▶ chunk ──▶ hashtfidf-v1 ────▶│  index           │
+   76 provisions ──▶ chunk ──▶ hashtfidf-v1 ────▶│  index           │
                                                 └────────┬─────────┘
                                                          │
    ┌─────────────────────────────────────────────────────┴────────────────────────┐
@@ -147,11 +147,11 @@ citation keys that back the typology.
 
 ## What is in the corpus
 
-74 provisions, indexed with effective dates and successors (`kb stats`):
+76 provisions, indexed with effective dates and successors (`kb stats`):
 
 | Jurisdiction | Docs | Examples |
 |---|---|---|
-| US | 28 | 31 CFR § 1010.311/.313/.314/.380/.410/.430, § 1020.320, 31 USC § 5318(g)(2)/§ 5318A, 31 USC § 5324, OFAC 50% rule, FinCEN SAR narrative guidance |
+| US | 30 | 31 CFR § 1010.311/.313/.314/.380/.410/.430/.610, § 1020.320, 31 USC § 5318(g)(2)/§ 5318A, 31 USC § 5324, Dodd-Frank § 312 and 314(a), OFAC 50% rule, FinCEN SAR narrative guidance |
 | EU | 18 | AMLD5 (2018/843), AMLD6 (2024/1640, from 2027), AMLR/AMLA, PSD2, TFR 2023/1113, GDPR arts. 5/6/15/17/22, DORA, AI Act, EU Blocking Statute |
 | UK | 10 | POCA 2002 ss. 330/333A, MLR 2017 regs. 18/19/27/28/33/40, SAMLA/OFSI, FCA SYSC 6.3, NCA SAR guidance |
 | FATF | 11 | Recs. 1, 6/7, 10–13, 15, 16, 20, TBML typologies, digital identity |

@@ -1,12 +1,12 @@
 # Regulatory coverage
 
-74 provisions across five collections. This page is the map of what ANJALI can cite, and — just
+76 provisions across five collections. This page is the map of what ANJALI can cite, and — just
 as importantly — what it cannot.
 
 Refresh with `anjali kb corpus` (manifest) and `anjali kb timeline` (coverage by year, plus what is
 about to change).
 
-## United States (28)
+## United States (30)
 
 | Instrument | Why it is in the corpus |
 |---|---|
@@ -25,6 +25,8 @@ about to change).
 | 31 CFR § 1020.210 / 31 USC § 5318(h) | AML programme requirements |
 | 31 CFR § 1020.220 | Customer identification programme |
 | 31 USC § 5318A / Part 1010 Subpart F | Special measures (primary money-laundering concern) |
+| 31 CFR § 1010.610 / Dodd-Frank § 312 | Enhanced due diligence for foreign correspondent accounts, incl. ownership |
+| 31 CFR § 1010.520 / Dodd-Frank § 314(a) | FinCEN information requests to financial institutions |
 | 31 CFR § 501.603 | OFAC reports on blocked property (strict liability, 10 business days) |
 | OFAC 50 Percent Rule | Ownership-based designation |
 | OFAC Compliance Commitments (2019), advisory on ransomware (2021) | Enforcement expectations |

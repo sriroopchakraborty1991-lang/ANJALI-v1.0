@@ -98,3 +98,13 @@ def test_get_document_returns_full_text(kb):
 def test_list_documents_covers_every_jurisdiction(kb):
     jurisdictions = {doc["jurisdiction"] for doc in kb.list_documents()}
     assert {"US", "EU", "UK", "FATF"} <= jurisdictions
+
+
+def test_dodd_frank_provisions_are_citable(kb):
+    """The brief called for Dodd-Frank coverage; the implemented rules must resolve."""
+    from anjali.kb.resolve import resolve
+
+    citations = resolve(kb, ["us-dfa-312-correspondent-dd", "us-dfa-1502-aml-context"], strict=True)
+    assert len(citations) == 2
+    assert all(c.verified and not c.future for c in citations)
+    assert any("1010.610" in c.citation for c in citations)

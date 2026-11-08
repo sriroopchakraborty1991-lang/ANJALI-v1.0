@@ -30,7 +30,8 @@ def workspace(tmp_path_factory) -> Path:
 
     from anjali.cli.main import app
 
-    result = CliRunner().invoke(app, ["--quiet", "init"])
+    # --force so a reused temporary workspace can never serve a stale corpus index
+    result = CliRunner().invoke(app, ["--quiet", "init", "--force"])
     assert result.exit_code == 0, result.output
     return home
 
