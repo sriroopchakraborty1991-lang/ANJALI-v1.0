@@ -1,0 +1,16 @@
+customer_id,name,customer_type,country,dob,industry,pep,risk_rating,onboarded_at,expected_monthly_volume,expected_txn_count,source_of_funds,accounts
+CUST-1001,Ravi Menon,individual,US,1990-11-04,consulting,no,high,2023-04-12,12000,18,consulting fees,ACC-1001
+CUST-2001,Acme Global Trading LLC,business,US,,industrial equipment,no,high,2022-08-30,150000,25,equipment trading,ACC-2001
+CUST-3001,Blue Harbor Holdings Ltd,business,US,,holding company,no,high,2024-02-14,200000,10,investment returns,ACC-3001|ACC-3002|ACC-3003
+CUST-4001,Holder 0,individual,US,1996-03-22,gig work,no,medium,2025-08-01,2500,30,marketplace income,ACC-4001
+CUST-4002,Holder 1,individual,US,1994-01-11,gig work,no,medium,2025-08-03,2500,30,marketplace income,ACC-4002
+CUST-4003,Holder 2,individual,US,1991-06-07,gig work,no,medium,2025-08-04,2500,30,marketplace income,ACC-4003
+CUST-4004,Holder 3,individual,US,1998-10-02,gig work,no,medium,2025-08-06,2500,30,marketplace income,ACC-4004
+CUST-4005,Holder 4,individual,US,1987-03-19,gig work,no,medium,2025-08-08,2500,30,marketplace income,ACC-4005
+CUST-6001,Sofia Almeida,individual,US,1979-07-14,architect,no,medium,2020-01-09,8000,20,salary,ACC-6001
+CUST-7001,Pavel Novak,individual,US,1988-12-01,import/export,no,medium,2021-11-23,20000,15,trading income,ACC-7001
+CUST-8001,Vikram Cash Business,individual,US,1983-05-30,consulting,no,high,2023-09-05,15000,25,cash sales,ACC-8001
+CUST-9001,Nadia Haddad,individual,US,1986-08-12,teacher,no,low,2022-05-18,4000,10,salary,ACC-9001
+CUST-5001,Priya Sharma,individual,US,1992-02-18,teacher,no,low,2019-06-11,3000,20,salary,ACC-5001
+CUST-5002,Daniel Okafor,individual,US,1985-09-09,engineer,no,low,2018-03-27,4000,18,salary,ACC-5002
+CUST-5003,Elena Rossi,individual,US,1994-04-25,designer,no,low,2021-07-19,3500,22,salary,ACC-5003

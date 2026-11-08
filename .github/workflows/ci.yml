@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: python ${{ matrix.python-version }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.10", "3.11", "3.12"]
+        include:
+          - os: macos-latest
+            python-version: "3.12"
+          - os: windows-latest
+            python-version: "3.12"
+
+    env:
+      # Keep the workspace inside the runner so the audit trail and SQLite file are disposable.
+      ANJALI_HOME: ${{ github.workspace }}/.anjali-ci
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Lint
+        run: ruff check src tests scripts
+
+      - name: Unit and integration tests
+        run: pytest -q
+
+      - name: End-to-end smoke (init, analyze, screen, simulate, sar, audit)
+        shell: bash
+        run: |
+          set -euo pipefail
+          export ANJALI_HOME="$RUNNER_TEMP/anjali-e2e"
+          rm -rf "$ANJALI_HOME"
+          anjali --quiet init
+          anjali doctor
+          anjali analyze --dataset demo --json > /tmp/analysis.json
+          python - <<'PY'
+          import json, pathlib
+          payload = json.loads(pathlib.Path("/tmp/analysis.json").read_text())
+          assert payload["risk"]["band"] in {"CRITICAL", "HIGH", "MEDIUM", "LOW"}
+          assert len(payload["findings"]) >= 8
+          assert all(f["regulatory_refs"] for f in payload["findings"])
+          print(f"findings={len(payload['findings'])} risk={payload['risk']['overall']}")
+          PY
+          anjali screen "Mohammed Al-Rashid" --country SY --json > /tmp/screen.json
+          anjali --quiet sar --dataset demo -o "$RUNNER_TEMP/sar.md"
+          anjali simulate --fail-under 0.9 --json > /tmp/sim.json
+          anjali audit verify --json
+          anjali conflicts list --json > /dev/null
+          test -s "$RUNNER_TEMP/sar.md"
+          echo "end-to-end OK"
+
+      - name: Control-test gate (recall must not regress)
+        if: matrix.python-version == '3.12' && matrix.os == 'ubuntu-latest'
+        shell: bash
+        run: |
+          export ANJALI_HOME="$RUNNER_TEMP/anjali-gate"
+          rm -rf "$ANJALI_HOME"
+          anjali --quiet init
+          anjali simulate --fail-under 1.0 --json > /dev/null
+          echo "no detection regressions across the 11 injected scenarios"
