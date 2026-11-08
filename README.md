@@ -222,7 +222,7 @@ the deterministic pipeline rather than pretending to be a model.
 
 ```bash
 pip install -e ".[dev]"
-pytest                 # 113 tests, ~3s
+pytest                 # 116 tests, ~3s
 ruff check src tests
 python scripts/generate_demo_data.py   # regenerate data/samples deterministically
 ```

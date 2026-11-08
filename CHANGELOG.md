@@ -72,7 +72,7 @@ rather than what it aspires to.
   `scripts/generate_demo_data.py`.
 
 **Project**
-- 113 tests covering retrieval, detection, screening, compliance artefacts, audit integrity,
+- 116 tests covering retrieval, detection, screening, compliance artefacts, audit integrity,
   agent contract and end-to-end CLI behaviour; ruff clean; CI matrix on Linux, macOS and Windows
   across Python 3.10–3.12 with an end-to-end smoke run and a control-test gate.
 
