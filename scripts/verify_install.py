@@ -28,7 +28,14 @@ def run(args: list[str], *, expect: int = 0, capture: bool = True) -> str:
     """Run an ANJALI command. `args` are the arguments *after* the program name."""
     command = [*BASE, *args]
     try:
-        completed = subprocess.run(command, capture_output=capture, text=True, check=False)
+        completed = subprocess.run(
+            command,
+            capture_output=capture,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            check=False,
+        )
     except FileNotFoundError as exc:  # pragma: no cover - install problem
         fail(f"{args[0]} is not on PATH ({exc})")
         raise SystemExit(1) from exc
@@ -57,6 +64,10 @@ def main() -> int:
     if home.exists() and options.keep:
         shutil.rmtree(home, ignore_errors=True)
     os.environ["ANJALI_HOME"] = str(home)
+    # Rich writes box-drawing characters and legal citations; make sure the child process and
+    # this one agree on the encoding (Windows defaults to cp1252 on a pipe).
+    os.environ.setdefault("PYTHONUTF8", "1")
+    os.environ.setdefault("PYTHONIOENCODING", "utf-8")
     global BASE
     executable = shutil.which("anjali")
     BASE = [executable] if executable else [sys.executable, "-m", "anjali.cli.main"]
