@@ -1,0 +1,235 @@
+version: 1
+corpus: INTL-STANDARDS
+documents:
+
+  - doc_id: intl-unsc-1267-1373
+    citation: "UN Security Council Resolutions 1267 (1999) and 1373 (2001) — Consolidated List"
+    title: "UN targeted sanctions and the consolidated list"
+    jurisdiction: INTL
+    regulator: United Nations Security Council
+    doc_type: standard
+    status: in_force
+    effective_from: 1999-10-15
+    source_url: "https://www.un.org/securitycouncil/content/un-sc-consolidated-list"
+    tags: [un, unsc, consolidated-list, sanctions, freezing, terrorism, proliferation]
+    obligations:
+      - "Freeze without delay funds and other financial assets of listed individuals and entities."
+      - "Prevent entry into or transit through member states' territories where the resolution so provides."
+      - "Report implementation to the relevant sanctions committee."
+    text: |
+      Resolution 1267 established the Al-Qaida/Taliban sanctions regime and the associated committee,
+      and Resolution 1373 requires all member states to freeze the funds and other financial assets or
+      economic resources of persons who commit, or attempt to commit, terrorist acts, or of entities
+      owned or controlled by them. The UN Security Council Consolidated List brings together the
+      individuals and entities designated under the various UN sanctions regimes, including those
+      relating to terrorism and proliferation financing.
+
+      Member states implement these resolutions through regional and national instruments — in the EU
+      by directly applicable regulations, in the UK by the Sanctions and Anti-Money Laundering Act 2018
+      and associated regulations, and in the US by OFAC's SDN List and programme regulations. The
+      lists are not identical: a person may be UN-listed and implemented in the EU and UK, but the US
+      may apply different criteria and additional designations. Screening against a single list is
+      therefore a control gap.
+
+      Practical expectation: the consolidated list is updated frequently, including minor spelling and
+      date-of-birth corrections that affect matching. Institutions must ingest updates without delay
+      and re-screen existing customers, not only new ones. ANJALI records the list version and load
+      timestamp with every screening result so that a decision can be reconstructed against the list
+      actually in force at the time.
+    confidence_note: "Summary of the resolutions and list mechanics."
+
+  - doc_id: intl-wolfsberg-cbddq
+    citation: "Wolfsberg Group Correspondent Banking Due Diligence Questionnaire (CBDDQ)"
+    title: "Industry standard for correspondent banking due diligence"
+    jurisdiction: INTL
+    regulator: Wolfsberg Group
+    doc_type: standard
+    status: in_force
+    effective_from: 2018-01-01
+    source_url: "https://wolfsberg-group.org/publications"
+    tags: [wolfsberg, correspondent-banking, due-diligence, questionnaire, standards]
+    obligations:
+      - "Use the CBDDQ and FCCQ to structure respondent-institution due diligence and periodic refresh."
+      - "Retain completed questionnaires, supporting evidence and the assessment rationale."
+    text: |
+      The Wolfsberg Group publishes industry questionnaires used widely for correspondent banking due
+      diligence: the Correspondent Banking Due Diligence Questionnaire (CBDDQ) and the Financial Crime
+      Compliance Questionnaire (FCCQ), together with guidance and a glossary. The CBDDQ covers the
+      respondent's AML programme, structure and ownership, products and services, customer base,
+      controls, monitoring, sanctions compliance, and information sharing arrangements.
+
+      The questionnaire is a starting point, not a safe harbour. Correspondent institutions remain
+      responsible for their own risk assessment and must corroborate responses against public
+      information, supervisory actions, and — where possible — the quality of the respondent's
+      transaction behaviour. Where responses conflict with observed behaviour (for example, a
+      respondent claiming no nested relationships but routinely appearing as an intermediary), the
+      observed behaviour should govern.
+
+      Periodic refresh is expected (commonly annual for higher-risk relationships). The most common
+      weakness is a questionnaire completed once at onboarding and never revisited, so a change in the
+      respondent's ownership or a supervisory action in its jurisdiction is never reflected in the
+      relationship risk rating.
+    confidence_note: "Summary of the Wolfsberg publications; questionnaires are updated periodically."
+
+  - doc_id: intl-wolfsberg-trade-principles
+    citation: "Wolfsberg Group Trade Finance Principles (2019, as amended)"
+    title: "Industry principles for trade finance and financial crime compliance"
+    jurisdiction: INTL
+    regulator: Wolfsberg Group / ICC / BAFT
+    doc_type: standard
+    status: in_force
+    effective_from: 2019-01-01
+    source_url: "https://wolfsberg-group.org/publications"
+    tags: [trade-finance, tbml, letters-of-credit, dual-use-goods, sanctions, standards]
+    obligations:
+      - "Apply risk-based financial-crime controls across trade products, including documentary checks."
+      - "Screen trade parties and goods against sanctions and dual-use controls."
+    text: |
+      The Trade Finance Principles, developed with the ICC and BAFT, set out how banks should apply
+      financial-crime compliance controls to trade finance. They address the respective roles of the
+      parties in documentary trade (applicant, beneficiary, issuing bank, advising bank, nominated
+      bank), the extent to which banks can and should scrutinise documents, and risk-based approaches
+      to dual-use goods, sanctions exposure and TBML indicators.
+
+      Key expectations: identify and verify the parties and their beneficial owners; understand the
+      underlying trade and its commercial logic; screen parties, vessels, ports and goods against
+      applicable sanctions and dual-use lists; apply enhanced scrutiny where goods are dual-use,
+      where routes transit high-risk jurisdictions, or where the transaction structure is
+      inconsistent with the parties' business; and escalate discrepancies rather than resolving them
+      commercially.
+
+      The principles explicitly acknowledge that banks are not the exporter of record and cannot verify
+      every shipment; the standard is risk-based diligence appropriate to the product and the risk, not
+      physical inspection. Documentation of the assessment is what demonstrates compliance — the
+      decision, the evidence considered, and the escalation.
+    confidence_note: "Summary of the Trade Finance Principles."
+
+  - doc_id: intl-basel-aml
+    citation: "Basel Committee — Guidelines: Sound management of risks related to money laundering and financing of terrorism (2014, revised 2020)"
+    title: "Bank-level governance for ML/TF risk"
+    jurisdiction: INTL
+    regulator: Basel Committee on Banking Supervision
+    doc_type: standard
+    status: in_force
+    effective_from: 2014-01-01
+    source_url: "https://www.bis.org/bcbs/publ/d505.htm"
+    tags: [basel, governance, risk-management, group-wide, three-lines-of-defence, standards]
+    obligations:
+      - "Establish group-wide AML/CFT programmes covering branches and subsidiaries."
+      - "Maintain independent compliance testing and board-level oversight of ML/TF risk."
+    text: |
+      The Basel Committee guidelines set supervisory expectations for how banks manage ML/TF risk.
+      They cover the role of the board and senior management, the three lines of defence, the
+      institution-wide risk assessment, customer acceptance and due diligence, ongoing monitoring,
+      suspicious activity reporting, sanctions compliance, and group-wide and cross-border
+      considerations.
+
+      Notable expectations: the board should approve the AML/CFT programme and receive regular
+      reporting on its effectiveness; the risk assessment should drive policies, procedures and
+      controls and be updated when the risk profile changes; the compliance function must be
+      independent and adequately resourced; and internal audit must test the programme independently
+      and report to the board or audit committee.
+
+      Group-wide application is a live issue in cross-border structures: where host-country law
+      prohibits implementation of a home-country requirement (for example, a prohibition on sharing
+      SAR information), the bank should apply additional measures to manage the risk and should
+      inform its home supervisor. This is the same conflict ANJALI surfaces between US SAR
+      confidentiality and EU/UK intra-group disclosure permissions.
+    confidence_note: "Summary of the BCBS guidelines."
+
+  - doc_id: intl-egmont-fiu
+    citation: "Egmont Group — Principles for Information Exchange Between FIUs"
+    title: "FIU-to-FIU information exchange"
+    jurisdiction: INTL
+    regulator: Egmont Group
+    doc_type: standard
+    status: in_force
+    effective_from: 2013-01-01
+    source_url: "https://egmontgroup.org/resources/"
+    tags: [egmont, fiu, information-exchange, cross-border, mla, intelligence]
+    obligations:
+      - "Exchange information with foreign FIUs through approved channels for intelligence purposes."
+      - "Apply confidentiality protections; use information only for the purpose for which it was shared."
+    text: |
+      The Egmont Group facilitates cooperation among financial intelligence units and publishes
+      principles for information exchange. FIUs may exchange information, spontaneously or on request,
+      where there is a reciprocal arrangement; the information is provided for intelligence purposes
+      and is subject to confidentiality protections and to the conditions attached by the providing
+      FIU, including consent for onward dissemination.
+
+      For the private sector the practical significance is indirect but important: a suspicious
+      activity report may be shared onward between FIUs under these principles, and the questions an
+      FIU asks of an institution later may reflect intelligence from another jurisdiction. Responding
+      to a request for information under the Egmont framework is distinct from responding to a 314(a)
+      request, and the disclosure permissions differ.
+
+      The relevant design point is auditability: requests for information, the scope of the response,
+      and the legal basis for disclosure should be logged, because the institution must be able to
+      demonstrate that it did not disclose beyond what was authorised.
+    confidence_note: "Summary of Egmont principles."
+
+  - doc_id: intl-iso20022
+    citation: "ISO 20022 — Payment message data model (structured party data)"
+    title: "Structured payment data and its compliance value"
+    jurisdiction: INTL
+    regulator: ISO
+    doc_type: standard
+    status: in_force
+    effective_from: 2004-01-01
+    source_url: "https://www.iso20022.org/"
+    tags: [iso20022, payments, structured-data, travel-rule, straight-through, data-quality]
+    obligations:
+      - "Populate structured originator and beneficiary fields where the payment scheme requires them."
+      - "Use structured data to improve screening precision and to satisfy travel-rule transmission."
+    text: |
+      ISO 20022 defines a common data model for financial messages. Its relevance to financial crime
+      is that party information can be carried in discrete, structured fields (name components,
+      address lines, identifiers, legal entity identifiers) rather than in free-text remittance
+      information.
+
+      Structured data improves screening in two ways: it allows name matching to use name components
+      rather than a concatenated blob, which reduces both false positives and false negatives; and it
+      makes the travel rule tractable, because the originator and beneficiary information required by
+      FATF Recommendation 16 can travel in defined fields rather than in a free-text field that may be
+      truncated or stripped by intermediary systems.
+
+      Migration to ISO 20022 in the major payment schemes has created a transitional period in which
+      both MT and MX messages coexist. Monitoring systems must parse both and must not silently drop
+      party fields that are absent in one format. A common defect is a screening engine that reads the
+      legacy field and ignores the structured equivalent, producing missed matches on migrated
+      corridors.
+    confidence_note: "Summary of the standard's compliance relevance."
+
+  - doc_id: intl-shadow-fintech-risk
+    citation: "Regulatory guidance — Third-party payment processing and nested relationships"
+    title: "Payment facilitation, aggregated accounts and nested exposure"
+    jurisdiction: INTL
+    regulator: Multiple (FATF, FinCEN, FCA)
+    doc_type: guidance
+    status: in_force
+    effective_from: 2020-01-01
+    source_url: "https://www.fatf-gafi.org/en/publications/Methodsandtrends.html"
+    tags: [fintech, payment-facilitator, nested, aggregated, mule, third-party]
+    obligations:
+      - "Look through aggregated account structures to the underlying payers and payees."
+      - "Treat payment facilitators and marketplaces as higher-risk until the sub-merchant population is assessed."
+    text: |
+      Payment facilitators, marketplaces and platforms frequently hold funds in aggregated accounts
+      where the institution's direct customer is the platform, not the underlying buyers and sellers.
+      This creates a structural information gap: the institution sees a single account with high
+      velocity and many small credits, while the actual payer and payee are one level removed.
+
+      Supervisory guidance across jurisdictions converges on the expectation that the institution
+      understand the platform's own customer base, its onboarding and monitoring, and its sub-merchant
+      risk profile; that it obtain data on underlying transactions where needed for monitoring; and
+      that it apply enhanced due diligence to platforms whose sub-merchant base includes high-risk
+      sectors or jurisdictions. Where the platform is unregulated, the institution's own due diligence
+      substitutes for the missing supervision.
+
+      Typology overlay: aggregated structures are attractive for money-mule networks, because the
+      platform's account appears as a single legitimate counterparty while the underlying payers are
+      recruited individuals. Detection requires sub-transaction data, clustering by device, contact
+      details and payout account, and monitoring for many-to-one inflows followed by rapid
+      consolidation and withdrawal — precisely the patterns ANJALI's mule-network and layering
+      detectors implement.
+    confidence_note: "Synthesis of multiple supervisory publications; not a single instrument."

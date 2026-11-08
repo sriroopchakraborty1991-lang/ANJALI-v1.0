@@ -1,0 +1,252 @@
+version: 1
+corpus: EU-AML
+documents:
+
+  - doc_id: eu-amld5-2018-843
+    citation: "Directive (EU) 2018/843 (AMLD5)"
+    title: "Fifth Anti-Money Laundering Directive — CDD, beneficial ownership and virtual currencies"
+    jurisdiction: EU
+    regulator: European Parliament and Council
+    doc_type: directive
+    status: in_force
+    effective_from: 2018-07-09
+    effective_to: 2027-07-09
+    supersedes: ["Directive (EU) 2015/849 (AMLD4) provisions it amended"]
+    source_url: "https://eur-lex.europa.eu/eli/dir/2018/843/oj"
+    tags: [amld5, cdd, beneficial-ownership, virtual-currency, pep, high-risk-third-country]
+    obligations:
+      - "Apply CDD to obliged entities; extend to virtual currency exchange and custodian wallet providers."
+      - "Establish public registers of beneficial owners with 25% ownership threshold."
+      - "Apply enhanced due diligence for high-risk third countries and PEPs."
+    text: |
+      AMLD5 amended AMLD4 (Directive (EU) 2015/849) to strengthen the EU AML/CFT regime. Key
+      changes: beneficial ownership registers became publicly accessible (with legitimate-interest
+      access for trusts); the 25 percent ownership threshold and control test remained; virtual
+      currency exchange services and custodian wallet providers were added as obliged entities;
+      anonymous prepaid instruments were restricted; and enhanced due diligence was required for
+      business relationships involving high-risk third countries identified by the Commission.
+
+      Core CDD obligations for obliged entities: identify the customer and verify identity on the
+      basis of documents, data or information from a reliable and independent source; identify
+      the beneficial owner and take reasonable measures to verify; assess and, where appropriate,
+      obtain information on the purpose and intended nature of the business relationship; and
+      conduct ongoing monitoring of the relationship and transactions, ensuring they are
+      consistent with the entity's knowledge of the customer, business and risk profile.
+
+      Politically exposed persons: obliged entities must apply risk-based enhanced measures,
+      including senior management approval, source-of-wealth and source-of-funds determination,
+      and enhanced ongoing monitoring. The definition covers domestic as well as foreign PEPs,
+      and family members and close associates. Member states may exempt domestic PEPs only under
+      specified lower-risk conditions.
+
+      AMLD5 is in force until AMLD6/AMLR apply from 10 July 2027. Systems must therefore be able
+      to resolve which version applies on a given date — the regulation text is not static.
+    confidence_note: "Summary of the Directive; AMLD6 replaces this regime from 10 July 2027."
+
+  - doc_id: eu-amld6-2024-1640
+    citation: "Directive (EU) 2024/1640 (AMLD6)"
+    title: "Sixth Anti-Money Laundering Directive — applies from 10 July 2027"
+    jurisdiction: EU
+    regulator: European Parliament and Council
+    doc_type: directive
+    status: proposed
+    effective_from: 2027-07-10
+    supersedes: ["Directive (EU) 2018/843", "Directive (EU) 2015/849"]
+    source_url: "https://eur-lex.europa.eu/eli/dir/2024/1640/oj"
+    tags: [amld6, 2027, transposition, supervisory, beneficial-ownership, amla]
+    obligations:
+      - "Member states must transpose by 10 July 2027; the AMLR applies directly from the same date."
+      - "Strengthens supervisory powers, beneficial ownership verification and central register interconnection."
+    text: |
+      AMLD6 (Directive (EU) 2024/1640) forms, with the AML Regulation (EU) 2024/1624 and the AMLA
+      Regulation (EU) 2024/1620, the new EU AML package adopted in June 2024. AMLD6 replaces the
+      previous directives and must be transposed by member states by 10 July 2027. The AML
+      Regulation, being directly applicable, takes effect on the same date without transposition.
+
+      AMLD6 strengthens the supervisory and institutional architecture: it clarifies the powers
+      of supervisors (including the ability to conduct on-site inspections and to require
+      remediation), sets rules on beneficial ownership registers including verification and
+      access, extends the scope of obliged entities, and provides for cooperation between FIUs
+      and with AMLA. It also addresses the disclosure of suspicious-activity reporting at group
+      level — a point of direct divergence from the US rule (see 31 USC 5318(g)(2)).
+
+      Transitional planning: because AMLR applies directly, obliged entities must be ready to
+      operate under a single rulebook rather than 27 transpositions from 10 July 2027. Policies
+      keyed to national transposition of AMLD4/5 will need replacement, and internal thresholds,
+      EDD triggers, PEP definitions and reporting fields should be mapped to the AMLR now.
+      Retrieval systems must not return AMLD6 provisions as "current law" before 2027 — a real
+      failure mode for RAG systems with no temporal filter.
+    confidence_note: "Summary of the adopted Directive; application date 10 July 2027."
+
+  - doc_id: eu-amlr-2024-1624
+    citation: "Regulation (EU) 2024/1624 (AMLR)"
+    title: "EU AML Regulation — single rulebook, applies from 10 July 2027"
+    jurisdiction: EU
+    regulator: European Parliament and Council
+    doc_type: regulation
+    status: proposed
+    effective_from: 2027-07-10
+    source_url: "https://eur-lex.europa.eu/eli/reg/2024/1624/oj"
+    tags: [amlr, single-rulebook, cdd, 2027, thresholds, beneficial-ownership, casps]
+    obligations:
+      - "Directly applicable across the EU from 10 July 2027 — no national transposition required."
+      - "Harmonised CDD, EDD and reporting requirements, including for crypto-asset service providers."
+    text: |
+      The AMLR harmonises AML/CFT requirements across the EU. It sets out the obliged entities,
+      internal policies, controls and procedures, customer due diligence, beneficial ownership
+      identification and verification, reporting obligations, record retention and the powers of
+      supervisors — in a single directly applicable instrument.
+
+      Significant features: CDD is required before establishing a business relationship and for
+      occasional transactions above the applicable threshold (generally €10,000, with lower
+      thresholds for certain sectors and for cash); beneficial ownership is defined by a 25
+      percent ownership threshold with a control test; obliged entities must verify beneficial
+      ownership using reliable sources including registers; simplified due diligence is available
+      only for demonstrably lower-risk situations and never for high-risk third countries;
+      enhanced due diligence is mandatory for high-risk third countries, PEPs, and other
+      specified situations; and reporting to the FIU must be made without undue delay.
+
+      For crypto-asset service providers the AMLR applies CDD without a de-minimis threshold for
+      transfers, consistent with the Transfer of Funds Regulation. Record retention is five years
+      after the end of the business relationship or the transaction, with member states permitted
+      to require longer periods under specified conditions.
+    confidence_note: "Summary of the adopted Regulation; applies from 10 July 2027."
+
+  - doc_id: eu-amla-2024-1620
+    citation: "Regulation (EU) 2024/1620 (AMLA)"
+    title: "Establishment of the EU Anti-Money Laundering Authority"
+    jurisdiction: EU
+    regulator: European Parliament and Council
+    doc_type: regulation
+    status: in_force
+    effective_from: 2024-06-26
+    source_url: "https://eur-lex.europa.eu/eli/reg/2024/1620/oj"
+    tags: [amla, supervisor, authority, aml, eu-institutions]
+    obligations:
+      - "AMLA becomes the central EU AML/CFT supervisor with direct supervision of selected high-risk entities."
+    text: |
+      The AMLA Regulation establishes the Authority for Anti-Money Laundering and Countering the
+      Financing of Terrorism (AMLA), located in Frankfurt, with operational responsibilities from
+      mid-2025 and direct supervision beginning in 2028. AMLA coordinates national supervisors,
+      directly supervises a selected group of high-risk obliged entities (initially a limited
+      number of cross-border credit and financial institutions), hosts the central AML/CFT
+      database, and supports FIUs through the new intelligence-sharing mechanism.
+
+      For institutions, the practical effect is a shift from national supervisory discretion to a
+      single supervisory manual and methodology, with peer reviews and a stronger emphasis on
+      evidence of effectiveness rather than policy existence. AMLA's methodology is expected to
+      weight data quality, the quality of suspicion detection, and the demonstrable operation of
+      controls.
+
+      Implication for tooling: an institution selected for direct supervision will need to
+      reconstruct, for any past decision, what the system saw, what rule fired, what the analyst
+      did and when. That is an audit-trail requirement in substance, and it is why ANJALI's audit
+      records are hash-chained and locally stored.
+    confidence_note: "Summary; implementation timeline per the published regulation."
+
+  - doc_id: eu-tfr-2023-1113
+    citation: "Regulation (EU) 2023/1113 (Transfer of Funds Regulation)"
+    title: "Travel rule for transfers of funds and crypto-assets — applies 30 December 2024"
+    jurisdiction: EU
+    regulator: European Parliament and Council
+    doc_type: regulation
+    status: in_force
+    effective_from: 2024-12-30
+    supersedes: ["Regulation (EU) 2015/847"]
+    source_url: "https://eur-lex.europa.eu/eli/reg/2023/1113/oj"
+    tags: [travel-rule, tfr, crypto, casps, self-hosted-wallet, 1000, conflict, fatf-16]
+    obligations:
+      - "Include originator and beneficiary information with transfers of funds and crypto-assets."
+      - "For crypto-asset transfers, apply the rules with no minimum threshold; verify control of self-hosted wallets above €1,000."
+      - "Apply enhanced checks for transfers involving self-hosted addresses above €1,000."
+    text: |
+      The recast Transfer of Funds Regulation aligns EU rules with FATF Recommendation 16 and
+      extends the travel rule to crypto-asset transfers. Payment service providers must ensure that
+      transfers of funds carry the payer's and payee’s name, account/IBAN and address or identifier
+      information, and must have procedures to detect missing or incomplete information and to
+      decide on execution, rejection or retention.
+
+      Crypto-asset service providers must ensure that transfers of crypto-assets carry the
+      originator's and beneficiary's name, distributed-ledger address and account number where
+      applicable — with **no de-minimis threshold** for transfers between CASPs. For transfers
+      to or from a self-hosted address, the CASP must obtain and verify information on the
+      originator or beneficiary and, above €1,000, take additional measures to assess whether the
+      address is owned or controlled by the customer, including verification by means of a
+      signature or an equivalent method.
+
+      Cross-border comparison: the US threshold is $3,000 for covered transmittals, the FATF
+      baseline is USD/EUR 1,000, and the EU applies zero threshold for CASP-to-CASP crypto
+      transfers. Building to the loosest standard creates violations in the strictest market.
+      The defensible architecture applies the strictest rule per corridor and documents the
+      jurisdictional basis in the audit trail.
+    confidence_note: "Paraphrase of the Regulation; self-hosted-wallet measures apply from 30 December 2024."
+
+  - doc_id: eu-psd2-2015-2366
+    citation: "Directive (EU) 2015/2366 (PSD2)"
+    title: "Payment services — strong customer authentication and fraud controls"
+    jurisdiction: EU
+    regulator: European Parliament and Council
+    doc_type: directive
+    status: in_force
+    effective_from: 2018-01-13
+    source_url: "https://eur-lex.europa.eu/eli/dir/2015/2366/oj"
+    tags: [psd2, sca, strong-customer-authentication, fraud, payments, open-banking, eba]
+    obligations:
+      - "Apply strong customer authentication for electronic payment transactions, with limited exemptions."
+      - "Maintain fraud monitoring and reporting; report major incidents to the competent authority."
+      - "Grant licensed third-party providers access to payment accounts with customer consent."
+    text: |
+      PSD2 governs payment services in the EU. Its security provisions matter for financial-crime
+      controls in three ways.
+
+      First, strong customer authentication (SCA): payment service providers must apply
+      authentication based on two or more independent elements (knowledge, possession, inherence)
+      for electronic payment transactions, with limited exemptions set out in the RTS on SCA and
+      common and secure communication (Commission Delegated Regulation (EU) 2018/389) — including
+      low-value contactless, trusted beneficiary, transaction risk analysis and recurring
+      same-amount payments. Exemptions are conditional on the provider's fraud rate staying below
+      prescribed reference thresholds, which creates a direct link between fraud analytics and
+      authentication design.
+
+      Second, fraud monitoring: providers must have systems to monitor payment transactions and
+      detect unauthorised or fraudulent initiation, and must report major operational or security
+      incidents to the competent authority.
+
+      Third, open banking: licensed AISPs and PISPs may access accounts with customer consent.
+      Obliged entities must treat third-party-initiated payments as a distinct channel in
+      monitoring, since the customer's own device and credentials may not appear in the flow, and
+      must apply the same AML controls regardless of who initiated the payment.
+    confidence_note: "Summary; the SCA RTS (2018/389) contains the operative technical detail."
+
+  - doc_id: eu-high-risk-third-countries
+    citation: "Commission Delegated Regulation (EU) 2016/1675 (as amended)"
+    title: "High-risk third countries with strategic AML/CFT deficiencies"
+    jurisdiction: EU
+    regulator: European Commission
+    doc_type: regulation
+    status: amended
+    effective_from: 2016-09-14
+    source_url: "https://eur-lex.europa.eu/eli/reg_del/2016/1675/oj"
+    tags: [high-risk, third-countries, edd, geographic-risk, fatf, lists]
+    obligations:
+      - "Apply enhanced customer due diligence to business relationships and transactions involving listed countries."
+      - "Re-screen the list on each amendment; the list is dynamic."
+    text: |
+      The Commission identifies high-risk third countries whose strategic AML/CFT deficiencies are
+      a material threat to the EU financial system. Obliged entities must apply enhanced customer
+      due diligence to business relationships and transactions involving such countries, including
+      obtaining additional information on the customer and beneficial owner, the intended nature of
+      the relationship, the source of funds and wealth, the reasons for the transactions, and
+      senior management approval for establishing or continuing the relationship, together with
+      enhanced monitoring.
+
+      The list is amended by delegated regulation and has been revised repeatedly, aligning
+      broadly (not exactly) with the FATF grey and black lists. Divergence between the EU list, the
+      FATF lists and US measures (including 311 special measures and OFAC programmes) is common:
+      a jurisdiction may be FATF-listed but not EU-listed, or subject to US 311 measures without
+      appearing on either.
+
+      Control consequence: geographic risk scoring must be computed from the union of applicable
+      lists with their effective dates, and must record which list drove the score. A static
+      country list baked into a rules engine at implementation will drift within months.
+    confidence_note: "Summary; consult the consolidated version for the current country list."

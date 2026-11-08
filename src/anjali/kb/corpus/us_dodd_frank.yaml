@@ -1,0 +1,95 @@
+version: 1
+corpus: "Dodd-Frank Act — AML/CFT provisions (US)"
+# The Dodd-Frank Act's AML-relevant provisions were implemented through 31 CFR Part 1010.
+# This file carries the implemented rules, because those are what an institution is examined
+# against, with the Dodd-Frank section recorded as the statutory basis.
+documents:
+  - doc_id: us-dfa-312-correspondent-dd
+    citation: "31 CFR § 1010.610 / Dodd-Frank Act § 312"
+    title: "Enhanced due diligence for foreign correspondent accounts"
+    jurisdiction: US
+    regulator: FinCEN / Treasury
+    doc_type: regulation
+    status: in_force
+    effective_from: 2011-07-15
+    supersedes: []
+    source_url: "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-E/section-1010.610"
+    tags:
+      - correspondent
+      - enhanced-due-diligence
+      - dodd-frank
+      - foreign-financial-institution
+      - ownership
+      - 312
+    obligations:
+      - "A covered financial institution with a foreign correspondent account must apply a risk-based due diligence programme to that account."
+      - "In the absence of a risk assessment, or where the account presents a high risk, enhanced due diligence applies, including obtaining information on the ownership and the nature of the foreign institution's business."
+      - "For high-risk foreign correspondent accounts, identify the beneficial owners of the foreign institution and take reasonable steps to understand the ownership structure."
+      - "The due diligence must be performed within 30 calendar days of opening the account, and be refreshed on a risk-based cycle."
+      - "The written procedures must be captured in the AML programme and be available to examiners."
+    penalties: "BSA civil money penalties under 31 USC § 5321, and enforcement action for programme failures."
+    text: |
+      Section 312 of the Dodd-Frank Wall Street Reform and Consumer Protection Act directed
+      FinCEN to prescribe due diligence standards for correspondent accounts maintained for
+      foreign financial institutions and for private banking accounts held for non-US persons.
+      FinCEN implemented it at 31 CFR § 1010.610 and § 1010.620.
+
+      Under § 1010.610 a covered financial institution must maintain a due diligence programme
+      appropriate to the risks presented by each foreign correspondent account. The programme
+      must be designed to ensure that the institution does not maintain a correspondent
+      relationship that exposes it to money laundering, terrorist financing or other illicit
+      financial activity, and must at a minimum determine, for each foreign financial
+      institution, the identity of the institution, the nature of its business, its AML
+      programme, its supervisor, and its ownership where appropriate.
+
+      Where the account is high risk — and always where the institution has no adequate risk
+      assessment for the account — enhanced due diligence applies. That includes obtaining
+      information about the ownership of the foreign institution, taking reasonable steps to
+      identify each beneficial owner, and understanding the purpose of the account. Treasury
+      may impose a higher standard for accounts of institutions operating under a banking
+      licence issued by a jurisdiction identified as a primary money laundering concern, or
+      for institutions that are affiliated with such an entity.
+
+      The rule is the operational expression of the FATF Recommendation 13 principle that
+      correspondent relationships must be understood, not merely documented: an institution is
+      expected to know whose money it is carrying, and to say how it knows.
+    confidence_note: >
+      Implementation rule for Dodd-Frank § 312. The 30-day timing obligation and the ownership
+      requirements are stated in the rule; the risk tiering is institution-specific and must be
+      documented in the AML programme.
+  - doc_id: us-dfa-1502-aml-context
+    citation: "Dodd-Frank Act § 314(a) / 31 CFR § 1010.520"
+    title: "Information requests from FinCEN to financial institutions (314(a))"
+    jurisdiction: US
+    regulator: FinCEN
+    doc_type: regulation
+    status: in_force
+    effective_from: 2011-07-15
+    supersedes: []
+    source_url: "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-E/section-1010.520"
+    tags:
+      - information-sharing
+      - 314a
+      - dodd-frank
+      - fincen
+      - law-enforcement
+    obligations:
+      - "A financial institution must comply with a 314(a) request by searching its records for the named subjects and reporting matches to FinCEN."
+      - "Searches cover the requested look-back period, typically twelve months for the account and six months for transactions, as stated in the request."
+      - "A 314(a) request does not authorise disclosure to the requester, and does not by itself obligate a SAR."
+    penalties: "BSA civil money penalties for failure to comply."
+    text: |
+      Section 314(a) of the USA PATRIOT Act, as amended by the Dodd-Frank Act and its
+      implementing regulations at 31 CFR § 1010.520, allows FinCEN to require financial
+      institutions to search their records for accounts and transactions of persons who are the
+      subject of a law enforcement investigation into money laundering or terrorist activity.
+
+      A request names the subject, states the look-back period, and requires the institution to
+      report any match — account maintained, transactions conducted, or both. Institutions must
+      designate a point of contact, keep the request confidential, and respond within the time
+      stated in the request. Matching a 314(a) subject is not itself a suspicious activity
+      determination, but it is a strong indicator that must be considered in the institution's
+      risk assessment of the relationship.
+    confidence_note: >
+      The 314(a) mechanism is administrative; the four-year look-back commonly cited comes from
+      the request itself, not from a fixed regulatory period.

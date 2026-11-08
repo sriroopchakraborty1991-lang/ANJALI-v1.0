@@ -1,0 +1,169 @@
+version: 1
+corpus: US-OFAC
+documents:
+
+  - doc_id: us-31cfr-501-603
+    citation: "31 CFR § 501.603"
+    title: "OFAC reports on blocked and unblocked property"
+    jurisdiction: US
+    regulator: OFAC
+    doc_type: regulation
+    status: in_force
+    effective_from: 2010-01-01
+    source_url: "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-V/part-501/section-501.603"
+    tags: [ofac, blocking, reporting, sdn, freeze, ten-days]
+    obligations:
+      - "Block property of designated persons immediately on identification; no prior notice or authorisation is required."
+      - "File a blocking report with OFAC within 10 business days and report annually thereafter."
+      - "Report rejected transactions within 10 business days."
+    penalties: "Strict civil liability; penalties per violation, with statutory maxima adjusted annually for inflation."
+    text: |
+      Any person holding property in which a blocked person has an interest must block it and
+      report to OFAC. Blocking must be immediate upon identification — the institution does not
+      wait for OFAC authorisation and does not release funds pending review. A report of blocked
+      property is due within 10 business days and must be filed on the OFAC reporting form,
+      identifying the property, the blocked person, and the programme.
+
+      Unblocking likewise requires reporting, typically within 10 business days of the event.
+      A transaction that is rejected rather than blocked (because no property actually came to
+      rest, for example a wire returned to originator) must also be reported within 10 business
+      days. Annual reports of blocked property are required for continuing blocks.
+
+      Liability standard: OFAC sanctions are strict-liability civil regimes. There is no
+      knowledge or intent requirement for a civil violation, and a well-designed screening
+      programme is a mitigating factor in penalty assessment rather than a defence. Voluntary
+      self-disclosure is the most significant mitigating factor and reduces the base penalty.
+    confidence_note: "Paraphrase of 31 CFR 501.603; typology of strict liability is settled OFAC practice."
+
+  - doc_id: us-ofac-50-percent-rule
+    citation: "OFAC 50 Percent Rule (OFAC guidance, Aug 2014 revised)"
+    title: "Ownership-based designation — entities 50% or more owned by blocked persons"
+    jurisdiction: US
+    regulator: OFAC
+    doc_type: guidance
+    status: in_force
+    effective_from: 2014-08-13
+    source_url: "https://ofac.treasury.gov/media/51821/download?inline"
+    tags: [ofac, 50-percent, ownership, aggregation, indirect, blocking, conflict]
+    obligations:
+      - "Treat any entity owned 50% or more in the aggregate, directly or indirectly, by one or more blocked persons as itself blocked."
+      - "There is no requirement that the entity be named on the SDN List."
+    text: |
+      OFAC's ownership guidance provides that any entity owned, directly or indirectly, 50 percent
+      or more in the aggregate by one or more blocked persons is itself considered blocked by
+      operation of law, even if the entity is not identified on the SDN List. Ownership may be
+      aggregated across multiple designated persons; it may be held indirectly through a chain of
+      entities; and the interests of immediate family members are generally not attributed absent
+      separate designation.
+
+      The practical difficulty is factual: ownership percentages must be established from
+      corporate registries, filings and, where available, beneficial-ownership data. OFAC expects
+      institutions to conduct risk-based due diligence and does not accept the absence of a list
+      match as conclusive. A transaction with an unnamed 60-percent-owned subsidiary of a
+      designated person is a violation even where screening returned no hit.
+
+      Divergence with the EU and UK: EU and UK sanctions apply an "ownership or control" test,
+      where control can be established below 50 percent (for example through the ability to
+      appoint a majority of the board or otherwise exercise decisive influence), with a
+      rebuttable presumption above 50 percent. The US test has no control prong and no rebuttable
+      presumption. A group operating in all three jurisdictions must therefore implement the
+      union of the tests — and must be able to explain, per counterparty, which test drove the
+      block.
+    confidence_note: "Summary of OFAC guidance; read with each programme's regulations."
+
+  - doc_id: us-ofac-compliance-framework
+    citation: "OFAC Compliance Commitments (May 2019)"
+    title: "A framework for OFAC compliance commitments"
+    jurisdiction: US
+    regulator: OFAC
+    doc_type: guidance
+    status: in_force
+    effective_from: 2019-05-02
+    source_url: "https://ofac.treasury.gov/media/16331/download?inline"
+    tags: [ofac, compliance-programme, penalties, root-causes, screening, training]
+    obligations:
+      - "Maintain five elements: management commitment, risk assessment, internal controls, testing and audit, training."
+      - "Self-disclose apparent violations; maintain an auditable screening and escalation record."
+    text: |
+      OFAC's framework describes five essential components of a sanctions compliance programme:
+      (1) management commitment; (2) risk assessment; (3) internal controls, including written
+      policies, screening, escalation and blocking procedures; (4) testing and auditing; and
+      (5) training. OFAC uses the framework both to assess penalties and to identify root causes
+      in enforcement actions.
+
+      Recurring root causes cited in settlements: doing business with an entity on the SDN List
+      without adequate screening; facilitating transactions for a designated entity after
+      acquisition; sanctions exposed through a non-standard payment route; failure to update
+      screening lists promptly; inadequate due diligence on counterparties and ownership; and use
+      of non-standard or obscure payment terms that obscure the sanctioned party. Penalty
+      mitigation weighs self-disclosure, cooperation, remedial measures and the programme's
+      maturity; recidivism and concealment aggravate.
+
+      For a locally-run agent this is an evidential argument: every screening call, threshold
+      decision and escalation can be logged with a hash-chained audit record, which is exactly
+      the artefact an examiner or OFAC asks for when reconstructing a decision months later.
+    confidence_note: "Summary of the published framework."
+
+  - doc_id: us-ieepa-1705
+    citation: "50 USC § 1705"
+    title: "IEEPA civil and criminal penalties for sanctions violations"
+    jurisdiction: US
+    regulator: US Congress
+    doc_type: statute
+    status: in_force
+    effective_from: 1977-12-28
+    source_url: "https://www.law.cornell.edu/uscode/text/50/1705"
+    tags: [ieepa, penalties, civil, criminal, strict-liability, sanctions]
+    penalties: "Civil penalty up to the greater of ~$300,000 (inflation-adjusted) or twice the value of the transaction per violation; criminal up to 20 years."
+    text: |
+      It is unlawful for a person to violate, attempt to violate, conspire to violate, or cause a
+      violation of any licence, order, regulation or prohibition issued under IEEPA. A civil
+      penalty may be imposed for each violation, and the standard is strict liability: the
+      government need not prove knowledge or intent. Criminal penalties require wilfulness and
+      can reach 20 years' imprisonment.
+
+      For a financial institution, "causing a violation" is the operative risk: processing a
+      payment, financing a shipment, or providing a service that facilitates a sanctioned
+      transaction can itself be a violation even where the institution is not the party named in
+      the designation. The maximum civil penalty is adjusted annually for inflation and is
+      applied per violation, so a single customer's recurring payments can produce a very large
+      exposure.
+
+      Risk consequence for control design: because intent is irrelevant to civil liability,
+      "we did not know" is not a defence and the quality of screening, escalation and blocking is
+      the only meaningful control. False negatives in name matching are therefore the highest
+      severity defect a screening system can have.
+    confidence_note: "Summary of the statute; penalty figures are inflation-adjusted annually."
+
+  - doc_id: us-ofac-ransomware-advisory
+    citation: "OFAC Advisory on Potential Sanctions Risks for Facilitating Ransomware Payments (2021)"
+    title: "Sanctions risk in ransomware payments and incident response"
+    jurisdiction: US
+    regulator: OFAC
+    doc_type: advisory
+    status: in_force
+    effective_from: 2021-09-21
+    source_url: "https://ofac.treasury.gov/media/91231/download?inline"
+    tags: [ransomware, cyber, sanctions, payments, incident-response, sdn]
+    obligations:
+      - "Screen ransomware payment recipients and associated wallets against OFAC lists before payment."
+      - "Report blocked or rejected payments; consider a licence and voluntary self-disclosure."
+    text: |
+      OFAC has emphasised that facilitating a ransomware payment to a designated person, or to a
+      person on the SDN List associated with a ransomware group, may violate IEEPA and create
+      liability for the victim, the insurer, the financial institution and any incident-response
+      firm involved. The advisory encourages victims and their advisers to report incidents
+      promptly to OFAC and to cooperate, and states that a self-initiated, timely report of a
+      ransomware attack and cooperation in the response will be considered a significant
+      mitigating factor.
+
+      Control implications: ransomware-related payments should be treated as high-risk payment
+      instructions with mandatory sanctions screening of the receiving address and its attribution
+      cluster; incident-response playbooks should include a sanctions escalation step before any
+      payment is authorised; and insurers and cyber consultancies acting for victims are advised
+      to maintain a sanctions compliance programme of their own.
+
+      Crypto overlay: sanctions compliance for ransomware requires wallet-level attribution, not
+      just name screening. A platform that only screens the customer name will not detect a
+      payment to a designated wallet cluster.
+    confidence_note: "Summary of the advisory."

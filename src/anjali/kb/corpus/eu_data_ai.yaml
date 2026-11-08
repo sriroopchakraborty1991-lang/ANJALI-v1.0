@@ -1,0 +1,282 @@
+version: 1
+corpus: EU-DATA-AI
+documents:
+
+  - doc_id: eu-gdpr-art5
+    citation: "Regulation (EU) 2016/679 (GDPR), Article 5"
+    title: "Principles of processing — lawfulness, minimisation and storage limitation"
+    jurisdiction: EU
+    regulator: European Parliament and Council
+    doc_type: regulation
+    status: in_force
+    effective_from: 2018-05-25
+    source_url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+    tags: [gdpr, data-minimisation, storage-limitation, purpose-limitation, principles]
+    obligations:
+      - "Process personal data lawfully, fairly and transparently for specified purposes."
+      - "Collect only what is necessary; keep it no longer than necessary, subject to legal obligations."
+    text: |
+      Personal data must be processed lawfully, fairly and in a transparent manner; collected for
+      specified, explicit and legitimate purposes and not further processed in a manner incompatible
+      with those purposes; adequate, relevant and limited to what is necessary; accurate and kept up
+      to date; kept in a form that permits identification for no longer than is necessary; and
+      processed with appropriate security.
+
+      In an AML context, Article 5 creates a structural tension rather than a prohibition. Account
+      monitoring requires broad data: transaction history, counterparties, device and channel
+      attributes, and often open-source intelligence. Each of those must have a documented purpose
+      (AML legal obligation), be proportionate to that purpose, and be retained only as long as the
+      AML record-keeping obligation, a legal hold, or a demonstrable investigative need requires.
+
+      Practical compliance design for a monitoring platform: field-level purpose tags; a retention
+      policy enforced by the application, not by an operator; aggregation or pseudonymisation where
+      individual-level data is not needed (for example, typology-performance metrics); and a record
+      of processing activities covering the monitoring system, its data sources and recipients.
+      Air-gapped, local-first deployment materially helps here because it eliminates a class of
+      transfers to third-country processors that would otherwise require a transfer mechanism.
+    confidence_note: "Summary of Article 5."
+
+  - doc_id: eu-gdpr-art6
+    citation: "Regulation (EU) 2016/679 (GDPR), Article 6"
+    title: "Lawful basis for processing — legal obligation in AML"
+    jurisdiction: EU
+    regulator: European Parliament and Council
+    doc_type: regulation
+    status: in_force
+    effective_from: 2018-05-25
+    source_url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+    tags: [gdpr, lawful-basis, legal-obligation, consent, aml, processing]
+    obligations:
+      - "Identify a lawful basis before processing; for AML, legal obligation under Union or member-state law is the usual basis."
+      - "Do not rely on consent for mandatory AML processing."
+    text: |
+      Processing is lawful only if at least one of six conditions applies: consent; performance of a
+      contract; compliance with a legal obligation; protection of vital interests; performance of a
+      task in the public interest; or legitimate interests.
+
+      AML processing is normally based on Article 6(1)(c) — compliance with a legal obligation to
+      which the controller is subject — because the obligations in the AML directive and regulation
+      are mandatory and cannot be declined. This matters practically: consent is inappropriate for
+      mandatory processing because it is revocable, which would create an impossible conflict between
+      the customer's withdrawal and the institution's statutory duty. Similarly, relying on
+      legitimate interests for monitoring is weaker than relying on legal obligation, because it
+      invites a balancing test the institution does not need to run.
+
+      Special-category data (for example, data revealing political opinions when identifying a PEP,
+      or trade-union membership in a source-of-funds narrative) requires an Article 9 condition on
+      top of Article 6. Article 9(2)(g) — substantial public interest — is the usual route, together
+      with the member-state law that authorises the processing. Institutions often miss this
+      two-step analysis when screening PEPs or handling politically sensitive relationships.
+    confidence_note: "Summary of Article 6 and Article 9 interaction."
+
+  - doc_id: eu-gdpr-art15-23
+    citation: "Regulation (EU) 2016/679 (GDPR), Articles 15 and 23"
+    title: "Data subject access rights and AML restrictions"
+    jurisdiction: EU
+    regulator: European Parliament and Council
+    doc_type: regulation
+    status: in_force
+    effective_from: 2018-05-25
+    source_url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+    tags: [gdpr, dsar, subject-access, restriction, sar-confidentiality, conflict]
+    obligations:
+      - "Respond to access requests within one month, subject to restrictions."
+      - "Member states may restrict access where it would obstruct the prevention, investigation or detection of criminal offences, including AML reporting."
+    text: |
+      A data subject has the right to obtain confirmation as to whether personal data concerning them
+      is being processed, and where it is, access to the data and to specified information (purposes,
+      categories, recipients, retention, rights, source, and the logic of automated decision-making).
+
+      Article 23 permits member states to restrict the scope of these obligations where the
+      restriction respects the essence of fundamental rights and is a necessary and proportionate
+      measure to safeguard, among other things, the prevention, investigation, detection or
+      prosecution of criminal offences, or the prevention of threats to public security. National AML
+      laws and data-protection acts use this power to restrict access to information relating to
+      suspicious activity reports.
+
+      This is a genuine cross-border conflict with the US, which has no equivalent data-subject
+      access right and imposes a flat prohibition on disclosing a SAR. A group facing a DSAR from a
+      customer who is also a SAR subject must not answer the request by confirming the existence of
+      the report: in the UK the DPA 2018 (Schedule 2, paragraph 16) provides a comparable exemption,
+      and the ICO expects the firm to apply it and to document why. The correct pattern is a
+      restricted response that confirms processing of transaction data without revealing the
+      existence or content of the report, with the basis for the restriction recorded.
+    confidence_note: "Summary; national implementing law determines the exact restriction."
+
+  - doc_id: eu-gdpr-art17
+    citation: "Regulation (EU) 2016/679 (GDPR), Article 17"
+    title: "Right to erasure and AML retention override"
+    jurisdiction: EU
+    regulator: European Parliament and Council
+    doc_type: regulation
+    status: in_force
+    effective_from: 2018-05-25
+    source_url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+    tags: [gdpr, erasure, right-to-be-forgotten, retention, aml, conflict]
+    obligations:
+      - "Erase personal data on a valid request unless a legal obligation requires retention."
+      - "Document the legal basis for refusing or partially refusing an erasure request."
+    text: |
+      The data subject has the right to obtain erasure of personal data without undue delay where one
+      of the specified grounds applies (data no longer necessary, consent withdrawn, unlawful
+      processing, legal obligation to erase, and others).
+
+      Article 17(3)(b) disapplies the right where processing is necessary for compliance with a legal
+      obligation which requires processing by Union or member-state law. AML record-keeping and
+      suspicious-activity reporting obligations are precisely such legal obligations: an institution
+      cannot erase CDD records, transaction records or a SAR inside the mandated retention period.
+
+      The correct handling of an erasure request from an AML-relevant customer is therefore a partial
+      response: erase what is not required (for example, marketing preferences, optional profile data
+      that is not part of the AML record), retain what is required for the statutory period, and
+      document the assessment. Once the retention period expires, the data must actually be deleted —
+      retaining it indefinitely "because it might be useful" is the mirror-image violation.
+
+      Design note: retention enforcement belongs in code. A platform that requires an operator to run
+      a deletion script will not survive an audit. ANJALI tags each case with a retention-until date
+      and exposes `anjali audit retention` to show what is due for deletion.
+    confidence_note: "Summary of Article 17(3)(b)."
+
+  - doc_id: eu-gdpr-art22
+    citation: "Regulation (EU) 2016/679 (GDPR), Article 22"
+    title: "Automated individual decision-making, including profiling"
+    jurisdiction: EU
+    regulator: European Parliament and Council
+    doc_type: regulation
+    status: in_force
+    effective_from: 2018-05-25
+    source_url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+    tags: [automated-decision, profiling, explainability, human-review, risk-scoring, ai]
+    obligations:
+      - "Do not subject a person to a decision based solely on automated processing that produces legal or similarly significant effects, unless an exception applies."
+      - "Where Article 22 applies, provide meaningful information about the logic involved and the consequences."
+      - "Provide safeguards including human intervention and the ability to contest the decision."
+    text: |
+      The data subject has the right not to be subject to a decision based solely on automated
+      processing, including profiling, which produces legal effects concerning them or similarly
+      significantly affects them. Exceptions apply where the decision is necessary for entering into
+      or performing a contract, is authorised by Union or member-state law, or is based on explicit
+      consent. Where an exception applies, the controller must implement suitable safeguards,
+      including at least the right to obtain human intervention, to express a point of view and to
+      contest the decision.
+
+      Application to compliance: a risk score is generally not itself the decision. The decision is
+      whether to onboard, exit, block, file or refrain from filing. An automated score becomes an
+      Article 22 decision when it is determinative and no meaningful human review occurs — which is
+      exactly what "auto-clear below threshold" alert handling produces. Where a SAR decision is
+      automated, the human-review safeguard is not merely good practice; it is the condition that
+      keeps the processing lawful.
+
+      Design consequence, and the reason ANJALI's scoring is explainable by construction: every score
+      decomposes into weighted, named factors with citations, and the tool reports the factor
+      contributions so a reviewer can state (and record) why they agree or disagree. A black-box
+      score with no factor attribution cannot satisfy the "meaningful information about the logic
+      involved" requirement in practice.
+    confidence_note: "Summary of Article 22 and Recitals 71-72; national law may add restrictions."
+
+  - doc_id: eu-ai-act-2024-1689
+    citation: "Regulation (EU) 2024/1689 (AI Act)"
+    title: "High-risk AI — creditworthiness assessment and compliance deployments"
+    jurisdiction: EU
+    regulator: European Parliament and Council
+    doc_type: regulation
+    status: in_force
+    effective_from: 2026-08-02
+    source_url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+    tags: [ai-act, high-risk, credit-scoring, transparency, human-oversight, governance, ai]
+    obligations:
+      - "Classify each AI system by risk; creditworthiness and credit-scoring AI is high-risk under Annex III."
+      - "High-risk systems require risk management, data governance, technical documentation, logging, human oversight and accuracy/robustness obligations."
+      - "Providers and deployers have distinct obligations; a deployer must use the system according to instructions and monitor it."
+    text: |
+      The AI Act establishes a risk-tiered regime. Prohibited practices apply from 2 February 2025;
+      general-purpose AI obligations from 2 August 2025; high-risk obligations for Annex III systems
+      from 2 August 2026; and obligations for high-risk systems embedded in regulated products from
+      2 August 2027.
+
+      Annex III designates as high-risk, among other categories, AI systems intended to be used to
+      evaluate the creditworthiness of natural persons or establish their credit score — with a
+      carve-out for systems used for the purpose of detecting financial fraud. That carve-out is
+      narrower than it looks: it covers fraud detection, not AML risk scoring generally, and the
+      Commission's guidance treats the purpose of the system as determinative. A system that scores
+      customer risk for CDD purposes is not automatically inside the fraud carve-out.
+
+      High-risk obligations include a risk-management system across the lifecycle; data governance
+      (relevant, representative, error-free and complete datasets); technical documentation;
+      record-keeping and automatic logging; transparency and instructions for use; human oversight;
+      and appropriate levels of accuracy, robustness and cybersecurity. Deployers must ensure human
+      oversight by competent persons, monitor operation, keep logs for at least six months, and
+      inform affected persons that they are subject to a high-risk AI system in specified cases.
+
+      For ANJALI the design response is deliberate: the agent drafts and cites; deterministic code
+      computes thresholds and scores; a named human approves before anything is filed or a customer
+      is exited. That separation is what makes the human-oversight obligation satisfiable and, not
+      coincidentally, what makes the output defensible in a supervisory conversation.
+    confidence_note: "Summary; application dates and Annex III scope should be confirmed for the specific deployment."
+
+  - doc_id: eu-dora-2022-2554
+    citation: "Regulation (EU) 2022/2554 (DORA)"
+    title: "Digital operational resilience — ICT third-party and model risk"
+    jurisdiction: EU
+    regulator: European Parliament and Council
+    doc_type: regulation
+    status: in_force
+    effective_from: 2025-01-17
+    source_url: "https://eur-lex.europa.eu/eli/reg/2022/2554/oj"
+    tags: [dora, ict-risk, third-party, outsourcing, resilience, model-risk, ai]
+    obligations:
+      - "Manage ICT risk including third-party providers; maintain a register of information on contractual arrangements."
+      - "Test digital operational resilience, including scenario-based testing, and report major incidents."
+      - "Contractual minimums for critical ICT third-party providers, including audit and exit rights."
+    text: |
+      DORA harmonises requirements for the security of network and information systems supporting
+      financial entities' business processes. It covers ICT risk management, incident reporting,
+      digital operational resilience testing, and the management of ICT third-party risk. It applies
+      from 17 January 2025.
+
+      Third-party risk is the part most relevant to AI deployment. Financial entities must maintain
+      and update a register of information on all contractual arrangements with ICT third-party
+      service providers, including whether the function is critical or important; must perform due
+      diligence and risk assessment before contracting; and must ensure contractual provisions cover
+      service levels, audit and access rights, data location and protection, business continuity,
+      exit strategies, and cooperation with supervisors.
+
+      For a model provider accessed over an API, the entity is a deployer of an ICT third-party
+      service, and the model is part of its ICT risk surface. A local-first, BYOK architecture
+      reduces this surface: there is no vendor-held copy of case data, no sub-processor chain, and no
+      data-processing agreement to negotiate for the inference layer beyond the customer's own
+      provider relationship. Where an external model is used, the entity still owns the
+      documentation, the testing regime and the exit plan.
+    confidence_note: "Summary of DORA's principal obligations."
+
+  - doc_id: eu-mifid2-art16
+    citation: "Directive 2014/65/EU (MiFID II), Article 16"
+    title: "Organisational requirements, compliance function and outsourcing"
+    jurisdiction: EU
+    regulator: European Parliament and Council
+    doc_type: directive
+    status: in_force
+    effective_from: 2018-01-03
+    source_url: "https://eur-lex.europa.eu/eli/dir/2014/65/oj"
+    tags: [mifid2, governance, compliance-function, outsourcing, controls, trading]
+    obligations:
+      - "Maintain adequate policies and procedures to detect and prevent market abuse and to ensure compliance."
+      - "Maintain a permanent and independent compliance function with adequate resources and authority."
+      - "Outsourcing of critical functions requires supervisory approval and retains responsibility."
+    text: |
+      Investment firms must maintain and operate effective organisational and administrative arrangements
+      with a view to taking all reasonable steps designed to prevent conflicts of interest from
+      adversely affecting clients, and must comply with the market-abuse regime (MAR, Regulation (EU)
+      596/2014).
+
+      Firms must establish adequate policies and procedures sufficient to ensure compliance, including
+      personal-transaction rules, and must maintain a permanent compliance function that is independent
+      and has the necessary authority, resources, expertise and access to information. Records of
+      services and transactions must be retained for five years (extendable by competent authorities).
+
+      MiFID II matters for financial-crime work because trading and settlement sit alongside payments
+      in the same customer relationship: a customer with market-abuse exposure frequently also has
+      AML exposure, and the information barriers between the two functions must not be used to avoid
+      escalation. A unified case file that spans payments, markets and sanctions is an operational
+      advantage and, for group-wide risk, often a supervisory expectation.
+    confidence_note: "Summary of Article 16 and related delegated acts."

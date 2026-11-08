@@ -1,0 +1,92 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anjali-ai"
+version = "0.1.0"
+description = "ANJALI-AI — AI-Navigated Judgment & Audit for Legal Integrity. A local-first, BYOK, citation-backed financial-crime compliance RAG agent for the terminal."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "ANJALI-AI contributors" }]
+keywords = [
+  "aml", "bsa", "kyc", "financial-crime", "compliance", "sar", "fintech",
+  "rag", "llm", "byok", "sanctions-screening", "ofac", "fatf", "amld6",
+  "regtech", "cli", "air-gapped",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Legal Industry",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Office/Business :: Financial",
+  "Topic :: Security",
+]
+dependencies = [
+  "typer>=0.9,<1.0",
+  "rich>=13.0",
+  "pydantic>=2.5,<3",
+  "httpx>=0.24",
+  "PyYAML>=6.0",
+  "tomli>=2.0; python_version < '3.11'",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "pytest-cov>=4.1", "ruff>=0.4", "mypy>=1.8"]
+pdf = ["reportlab>=4.0"]
+
+[project.urls]
+Homepage = "https://github.com/sriroopchakraborty1991-lang/ANJALI-v1.0"
+Documentation = "https://github.com/sriroopchakraborty1991-lang/ANJALI-v1.0/tree/main/docs"
+Issues = "https://github.com/sriroopchakraborty1991-lang/ANJALI-v1.0/issues"
+Changelog = "https://github.com/sriroopchakraborty1991-lang/ANJALI-v1.0/blob/main/CHANGELOG.md"
+
+[project.scripts]
+anjali = "anjali.cli.main:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+anjali = [
+    "kb/corpus/*.yaml",
+    "data/*.yaml",
+    "data/*.json",
+    "data/samples/*.csv",
+    "py.typed",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+filterwarnings = ["error::DeprecationWarning:anjali.*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4", "RUF"]
+ignore = [
+    "E501",    # line length is enforced by the formatter, not the linter
+    "B008",    # typer.Depends/Argument defaults are the framework idiom
+    "RUF001",  # en-dashes and section marks are intentional in legal text
+    "RUF002",
+    "RUF003",
+    "RUF007",  # zip over successive pairs is clearer than itertools.pairwise here
+    "RUF009",  # Decimal defaults are immutable
+    "B905",    # explicit strict= adds noise for equal-length internal sequences
+]
+
+[tool.mypy]
+python_version = "3.10"
+warn_unused_ignores = false
+ignore_missing_imports = true

@@ -1,0 +1,112 @@
+version: 1
+corpus: EU-SANCTIONS
+documents:
+
+  - doc_id: eu-sanctions-ownership-control
+    citation: "Council of the EU — Restrictive measures: ownership and control (guidance)"
+    title: "EU ownership and control test for sanctions designation"
+    jurisdiction: EU
+    regulator: Council of the European Union
+    doc_type: guidance
+    status: in_force
+    effective_from: 2018-07-10
+    source_url: "https://www.consilium.europa.eu/en/policies/sanctions/"
+    tags: [sanctions, ownership, control, 50-percent, eu, designation, conflict]
+    obligations:
+      - "Treat an entity as designated where a listed person or entity owns more than 50% or controls it."
+      - "Control may exist below 50% ownership — assess board control and other decisive influence."
+    text: |
+      EU restrictive measures apply to funds and economic resources belonging to, owned,
+      held or controlled by designated persons. EU guidance and Court of Justice case law
+      interpret "owned or controlled" to require a case-by-case assessment rather than a
+      mechanical percentage. Ownership above 50 percent creates a strong presumption that
+      the entity is covered, but that presumption is rebuttable. Control can be established
+      below 50 percent where the listed person can appoint or remove a majority of the board
+      or otherwise exercise decisive influence over the entity's decisions.
+
+      Consequence: an EU operator must screen not only the counterparty's name but its
+      ownership and governance. Two companies with identical 45-percent ownership can be
+      treated differently depending on who controls the board, the voting agreement and the
+      source of financing. The analysis should be documented and refreshed when ownership
+      or governance changes.
+
+      Divergence from the US: the US 50 Percent Rule operates by operation of law with no
+      control prong and no rebuttal, and aggregates holdings across multiple blocked
+      persons. The EU test is broader below 50 percent but rebuttable above it. The UK has
+      adopted an ownership-and-control test close to the EU approach. A group operating in
+      all three must apply the union of the tests, and must be able to explain which test
+      produced each decision. See ``anjali conflicts show ownership-50-percent-control``.
+    confidence_note: "Synthesis of Council guidance and CJEU case law; individual sanctions regimes vary."
+
+  - doc_id: eu-blocking-statute-2271-96
+    citation: "Council Regulation (EC) No 2271/96 (EU Blocking Statute)"
+    title: "EU Blocking Statute — protection against extraterritorial sanctions"
+    jurisdiction: EU
+    regulator: Council of the European Union
+    doc_type: regulation
+    status: in_force
+    effective_from: 1996-11-29
+    source_url: "https://eur-lex.europa.eu/eli/reg/1996/2271/oj"
+    tags: [blocking-statute, extraterritorial, secondary-sanctions, iran, cuba, conflict, us-eu]
+    obligations:
+      - "Do not comply with specified extraterritorial US sanctions, including by refusing to perform contractual obligations."
+      - "Apply for an authorisation where compliance with a foreign measure would cause serious damage."
+      - "Notify the Commission where foreign measures directly affect economic or financial interests."
+    penalties: "Member-state penalties for breaches; damages exposure for refusal to perform contracts."
+    text: |
+      The Blocking Statute protects EU operators from the extraterritorial application of
+      certain US sanctions. It prohibits EU persons from complying with the listed foreign
+      measures — including US secondary sanctions relating to Iran and Cuba — and provides
+      that foreign judgments or administrative decisions giving effect to those measures
+      cannot be enforced in the EU. Where compliance with a foreign requirement would cause
+      serious damage to an EU operator's interests, the operator may apply to the Commission
+      for an authorisation to comply; without one, complying is itself a breach.
+
+      For a financial institution operating in both jurisdictions this creates a hard
+      conflict: a US parent or correspondent may require the EU affiliate to terminate an
+      Iranian-related relationship, while EU law prohibits the EU entity from doing so
+      absent an authorisation. Approaches differ by member state supervisors, and the
+      Commission's guidance (updated 2018 for the JCPOA withdrawal) sets out the
+      authorisation route.
+
+      Practical handling: escalate to legal, document the dual exposure, seek an
+      authorisation where the exposure is material, and do not treat a US-facing compliance
+      instruction as automatically binding on an EU incorporated entity. Record the decision
+      and the legal basis — this is precisely the kind of conflict ANJALI surfaces with
+      citations on both sides.
+    confidence_note: "Summary; application is fact-specific and requires EU legal advice."
+
+  - doc_id: eu-fiu-reports
+    citation: "Regulation (EU) 2024/1624 (AMLR), reporting obligations; AMLD6 group disclosure"
+    title: "EU suspicious transaction reporting and group-wide disclosure"
+    jurisdiction: EU
+    regulator: European Parliament and Council
+    doc_type: regulation
+    status: in_force
+    effective_from: 2027-07-10
+    source_url: "https://eur-lex.europa.eu/eli/reg/2024/1624/oj"
+    tags: [sar, str, reporting, group-disclosure, fiu, tipping-off, conflict]
+    obligations:
+      - "Report suspicious activity to the FIU without undue delay."
+      - "Share information within the group where necessary for AML/CFT purposes, subject to confidentiality safeguards."
+    text: |
+      Obliged entities must report suspicions of money laundering or terrorist financing to
+      the financial intelligence unit without undue delay. Under the EU framework — and
+      under the AMLD5/AMLD6 provisions it replaces — where an obliged entity is part of a
+      group, it may share information within the group that is necessary for the purposes
+      of preventing and detecting money laundering, provided confidentiality is maintained.
+
+      This intra-group permission is a deliberate structural feature of the EU regime: a
+      group compliance function is expected to have visibility of suspicious-activity
+      reporting across the group in order to manage the relationship and the risk
+      consistently. The AMLD framework also permits disclosure to the group's parent in a
+      third country where that parent has equivalent controls, and prohibits disclosure to
+      parties outside the group except as permitted.
+
+      Direct conflict with the United States: 31 USC 5318(g)(2) prohibits notification of
+      any person involved in the transaction, and contains no intra-group carve-out. A US
+      licensed subsidiary of an EU group therefore cannot mirror the group-wide disclosure
+      its parent expects. The workable structure is a documented jurisdictional split with
+      information flows routed through non-US entities and a written position reviewed by
+      counsel in both jurisdictions.
+    confidence_note: "Summary of the EU framework; the AMLR applies from 10 July 2027."

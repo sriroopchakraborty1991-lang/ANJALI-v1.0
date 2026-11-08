@@ -1,0 +1,346 @@
+version: 1
+corpus: UK-MLR
+documents:
+
+  - doc_id: uk-mlr-2017-reg27
+    citation: "Money Laundering Regulations 2017 (SI 2017/692), reg. 27"
+    title: "Customer due diligence — UK requirement"
+    jurisdiction: UK
+    regulator: HM Treasury / FCA
+    doc_type: regulation
+    status: in_force
+    effective_from: 2017-06-26
+    source_url: "https://www.legislation.gov.uk/uksi/2017/692/regulation/27"
+    tags: [cdd, kyc, mlr-2017, identity, verification, obliged-entities]
+    obligations:
+      - "Apply CDD before establishing a business relationship or carrying out an occasional transaction above €10,000 (or €1,000 for certain sectors)."
+      - "Identify the customer and beneficial owner; verify identity; obtain information on the purpose and intended nature of the relationship."
+      - "Conduct ongoing monitoring of the relationship."
+    penalties: "Criminal offences for breach of the MLRs; unlimited fines and up to 2 years' imprisonment."
+    text: |
+      A relevant person must apply customer due diligence in specified circumstances: when
+      establishing a business relationship; when carrying out an occasional transaction that
+      amounts to €15,000 or more (€10,000 in the case of certain persons), or a transfer of funds
+      exceeding €1,000 where the customer is not otherwise identified; when there is a suspicion
+      of money laundering or terrorist financing; and when there are doubts about the veracity or
+      adequacy of previously obtained identification.
+
+      CDD comprises: (a) identifying the customer and verifying identity on the basis of documents,
+      data or information obtained from a reliable and independent source; (b) identifying, where
+      there is a beneficial owner who is not the customer, the beneficial owner and taking
+      reasonable measures to verify their identity so that the relevant person is satisfied it
+      knows who the beneficial owner is, including, as regards legal persons, understanding the
+      ownership and control structure; and (c) assessing and, where appropriate, obtaining
+      information on the purpose and intended nature of the business relationship.
+
+      Simplified due diligence is permitted only where the relevant person determines the risk is
+      low and can demonstrate that determination to its supervisor (reg. 33). Where CDD cannot be
+      completed, the relevant person must not establish the relationship and must consider a
+      disclosure. The regulator treats CDD as an outcome obligation, not a document-collection
+      exercise: the file must show what was verified and how.
+    confidence_note: "Paraphrase of SI 2017/692 reg. 27; thresholds are set in the MLRs as amended."
+
+  - doc_id: uk-mlr-2017-reg28
+    citation: "Money Laundering Regulations 2017, reg. 28 and reg. 33"
+    title: "Enhanced and simplified due diligence (UK)"
+    jurisdiction: UK
+    regulator: HM Treasury / FCA
+    doc_type: regulation
+    status: in_force
+    effective_from: 2017-06-26
+    source_url: "https://www.legislation.gov.uk/uksi/2017/692/regulation/28"
+    tags: [edd, sdd, pep, high-risk, correspondent, mlr-2017]
+    obligations:
+      - "Apply EDD where risk is higher, for PEPs and for correspondent relationships with non-EEA respondents."
+      - "Obtain senior management approval; establish source of wealth and source of funds; apply enhanced monitoring."
+    text: |
+      Relevant persons must apply enhanced customer due diligence in higher-risk situations and in
+      the specific cases the regulations identify: a business relationship or transaction with a
+      person established in a high-risk third country; a PEP, a family member or a known close
+      associate of a PEP; a situation that by its nature presents a higher risk of money
+      laundering or terrorist financing; and a correspondent relationship with a respondent
+      institution established outside the United Kingdom (with specific obligations on the
+      respondent's AML controls, ownership and the nature of its business).
+
+      EDD measures include, as appropriate: obtaining additional information on the customer and
+      beneficial owner; obtaining additional information on the intended nature of the business
+      relationship; obtaining information on the source of funds and source of wealth; obtaining
+      information on the reasons for the transactions; obtaining senior management approval for
+      establishing or continuing the relationship; and conducting enhanced monitoring by
+      increasing the number and timing of controls and selecting transaction patterns for further
+      examination.
+
+      Simplified due diligence under reg. 33 requires a documented risk assessment and is not
+      available where there is a suspicion of money laundering. A firm cannot rely on a
+      customer's self-certification alone; the low-risk determination must be evidence-based and
+      reviewed. Note the interaction with the FCA's systems-and-controls expectations: EDD
+      decisions must be recorded with the identity of the approver.
+    confidence_note: "Paraphrase of the MLRs."
+
+  - doc_id: uk-mlr-2017-reg18-19
+    citation: "Money Laundering Regulations 2017, reg. 18–19"
+    title: "Risk assessment and policies, controls and procedures"
+    jurisdiction: UK
+    regulator: HM Treasury / FCA
+    doc_type: regulation
+    status: in_force
+    effective_from: 2017-06-26
+    source_url: "https://www.legislation.gov.uk/uksi/2017/692/regulation/18"
+    tags: [risk-assessment, governance, policies, controls, procedures, training]
+    obligations:
+      - "Carry out and document a risk assessment for the business, proportionate to its size and nature."
+      - "Maintain policies, controls and procedures to mitigate and manage the assessed risks, approved by senior management."
+      - "Appoint a nominated officer and maintain a training programme and independent audit function."
+    text: |
+      A relevant person must carry out a risk assessment to identify and assess the risk of money
+      laundering and terrorist financing with respect to its business, considering its customer
+      base, products and services, delivery channels, geographic areas and any relevant
+      information from supervisors. The assessment must be documented, kept up to date, and made
+      available to the regulator on request.
+
+      Policies, controls and procedures must be established and maintained to mitigate and manage
+      the risks identified, and must be approved by senior management. They must include risk
+      management practices, customer due diligence, record-keeping, and internal reporting and
+      escalation. The regulations also require: appointment of a nominated officer (MLRO) to
+      receive internal disclosures; screening of relevant employees before appointment and during
+      employment; a training programme; and an independent audit function to test the
+      effectiveness of the controls.
+
+      The "disproportionate policy, undemonstrated effect" finding is common: firms produce a
+      risk assessment that is not actually used to calibrate monitoring. A defensible position
+      links each identified risk to a specific control, and each control to a test result. ANJALI's
+      adversarial simulation produces exactly that link by failing controls deliberately and
+      recording whether the monitoring caught the injected typology.
+    confidence_note: "Paraphrase of the MLRs and FCA guidance."
+
+  - doc_id: uk-mlr-2017-reg40
+    citation: "Money Laundering Regulations 2017, reg. 40"
+    title: "Record-keeping and five-year retention (UK)"
+    jurisdiction: UK
+    regulator: HM Treasury / FCA
+    doc_type: regulation
+    status: in_force
+    effective_from: 2017-06-26
+    source_url: "https://www.legislation.gov.uk/uksi/2017/692/regulation/40"
+    tags: [retention, records, five-years, gdpr, data-protection]
+    obligations:
+      - "Retain CDD records and transaction records for five years after the relationship ends or the transaction is completed."
+      - "Retain records of the steps taken to comply with the MLRs and make them available to the regulator."
+    text: |
+      Relevant persons must keep records of the CDD measures taken and of the transactions carried
+      out, for five years after the business relationship ends or the transaction is completed.
+      Records must also be kept of the steps taken to comply with the regulations, including the
+      risk assessment and the rationale for decisions, and must be provided to a supervisory
+      authority on request.
+
+      Interaction with data protection: the ICO and FCA accept that AML retention is a legal
+      obligation under the UK GDPR's legal-obligation basis, so records may be retained for the
+      mandated period even where the data subject asks for erasure. Deleting at the end of the
+      retention period, or at legal-hold expiry, is required; "retain forever to be safe" is a
+      UK GDPR storage-limitation problem. Records relating to a live investigation or a legal hold
+      must not be deleted even where the five-year clock has run.
+
+      Practical audit point: retention schedules should be enforced by the system, not by a manual
+      runbook. ANJALI stores case data in a local SQLite file with an explicit retention field so
+      the schedule is inspectable.
+    confidence_note: "Paraphrase of reg. 40 and ICO/FCA guidance."
+
+  - doc_id: uk-poca-s330
+    citation: "Proceeds of Crime Act 2002, s. 330"
+    title: "Failure to disclose — regulated sector (UK)"
+    jurisdiction: UK
+    regulator: Home Office / NCA
+    doc_type: statute
+    status: in_force
+    effective_from: 2003-02-24
+    source_url: "https://www.legislation.gov.uk/ukpga/2002/29/section/330"
+    tags: [poca, disclosure, failure-to-disclose, mlro, suspicion, sar, criminal]
+    obligations:
+      - "Disclose suspected money laundering to the nominated officer as soon as practicable."
+      - "The offence applies where the person knows or suspects, or has reasonable grounds to suspect, and the information came in the course of business in the regulated sector."
+    penalties: "Up to 5 years' imprisonment and/or an unlimited fine."
+    text: |
+      A person commits an offence if they know or suspect, or have reasonable grounds for knowing
+      or suspecting, that another person is engaged in money laundering; the information came to
+      them in the course of a business in the regulated sector; and they fail to make the required
+      disclosure to the nominated officer (or to the authorities) as soon as practicable after the
+      information came to them.
+
+      The "reasonable grounds" limb makes the offence objective: a firm cannot defend a failure by
+      showing that no individual actually suspected, if a reasonable person in the role would have
+      suspected. This is the criminal-law mirror of the UK's systems-and-controls regime, and it is
+      why alert backlog management is a compliance risk rather than an operational one — an
+      unreviewed alert with obvious red flags is evidence of a failure to disclose.
+
+      Defences include: reasonable excuse for not disclosing; lack of training (where the employer
+      failed to provide it, narrowly); and, importantly, a disclosure to the nominated officer. The
+      internal reporting channel must therefore be frictionless and auditable, with no penalty for
+      over-reporting. ANJALI records the suspicion timestamp at alert creation so the "as soon as
+      practicable" clock is provable.
+    confidence_note: "Summary of POCA s.330; penalty under s.334."
+
+  - doc_id: uk-poca-s333a
+    citation: "Proceeds of Crime Act 2002, s. 333A"
+    title: "Tipping off — UK prohibition"
+    jurisdiction: UK
+    regulator: Home Office / NCA
+    doc_type: statute
+    status: in_force
+    effective_from: 2008-07-21
+    source_url: "https://www.legislation.gov.uk/ukpga/2002/29/section/333A"
+    tags: [tipping-off, disclosure, confidentiality, sar, group-sharing, conflict, poca]
+    obligations:
+      - "Do not disclose to the subject that a SAR has been made or that an investigation is being contemplated."
+      - "Permitted disclosures include within the same undertaking and to group undertakings for the purpose of preventing money laundering."
+    penalties: "Up to 2 years' imprisonment and/or an unlimited fine."
+    text: |
+      A person commits an offence if they disclose information that is likely to prejudice any
+      investigation that might be conducted following a required disclosure or a suspicious
+      activity report, where the disclosure is made to the person suspected or to a third party,
+      and the person making it knows or suspects it will prejudice an investigation.
+
+      Permitted disclosures are defined by s.333B and the Money Laundering Regulations. Disclosure
+      is permitted where it is made to a supervisory authority, to the FIU, to a constable or
+      customs officer, or — critically — where it is made **by a person in the regulated sector to
+      another person in the same undertaking or a group undertaking** for the purpose of
+      preventing or detecting money laundering. There is also a permission to disclose for the
+      purpose of preventing a person from committing a money-laundering offence.
+
+      Cross-border conflict: the UK permits intra-group disclosure for AML purposes; the US
+      prohibition in 31 USC 5318(g)(2) contains no equivalent intra-group carve-out. A UK-franchised
+      entity disclosing to a US parent outside the 314(b) framework may create a US violation, even
+      though the same disclosure is permitted under UK law. Group policy should route such
+      disclosures through a separately constituted non-US compliance function and document the
+      legal basis for the chosen route.
+    confidence_note: "Summary of s.333A/333B; permitted-disclosure scope should be read with the MLRs."
+
+  - doc_id: uk-ta-2000-s21a
+    citation: "Terrorism Act 2000, s. 21A"
+    title: "Failure to disclose terrorist-financing suspicion (UK)"
+    jurisdiction: UK
+    regulator: Home Office / NCA
+    doc_type: statute
+    status: in_force
+    effective_from: 2001-02-19
+    source_url: "https://www.legislation.gov.uk/ukpga/2000/11/section/21A"
+    tags: [terrorism, tfi, disclosure, suspicion, sar, daml]
+    obligations:
+      - "Disclose suspicion of terrorist financing to the nominated officer as soon as practicable."
+      - "Apply for consent (DAML) where a prohibited act is contemplated."
+    text: |
+      A person commits an offence if they know or suspect, or have reasonable grounds for
+      suspecting, that another person has committed an offence of terrorist financing, the
+      information came to them in the course of a business in the regulated sector, and they fail
+      to make a disclosure to the nominated officer as soon as is reasonably practicable.
+
+      Terrorist-financing disclosures are made through the same UKFIU channel as money-laundering
+      SARs but are flagged as TF. Where a firm knows or suspects that it is about to commit a
+      prohibited act (for example continuing to hold funds that are, or may be, terrorist property),
+      it should make an application for a defence against money laundering (DAML) and await consent.
+      The NCA has seven working days from the application to respond, extendable once by up to
+      31 days.
+
+      Practical point: the DAML clock is an operational constraint that must be visible to the
+      business. Continuing to transact in the absence of consent is a criminal offence even if a
+      SAR was filed. Systems that treat SAR filing and DAML application as the same workflow
+      routinely create exposure.
+    confidence_note: "Summary of the Act and NCA process."
+
+  - doc_id: uk-fca-sysc-6-3
+    citation: "FCA Handbook, SYSC 6.3 (Financial crime)"
+    title: "UK systems and controls for financial crime"
+    jurisdiction: UK
+    regulator: FCA
+    doc_type: guidance
+    status: in_force
+    effective_from: 2016-06-07
+    source_url: "https://www.handbook.fca.org.uk/handbook/SYSC/6/3.html"
+    tags: [fca, systems-controls, financial-crime, governance, effectiveness, aml]
+    obligations:
+      - "Establish and maintain effective systems and controls to counter the risk of being used for financial crime."
+      - "Keep policies up to date and ensure staff are adequately trained."
+    text: |
+      SYSC 6.3 requires firms to establish and maintain adequate policies and procedures sufficient
+      to ensure compliance with the firm's obligations under the financial crime regime, and to
+      counter the risk that it might be used to further financial crime. The obligation covers
+      anti-money laundering, terrorist financing, sanctions, fraud and bribery.
+
+      The FCA's supervision of this rule emphasises *effectiveness*, not documentation. In
+      enforcement, recurring findings include: an inadequate risk assessment that is not used to
+      drive controls; monitoring scenarios that do not cover the firm's actual high-risk products;
+      alert backlogs with no risk-based prioritisation; insufficient resource and expertise in the
+      financial-crime team; SARS quality problems; and gaps in sanctions screening, especially
+      for indirect and ownership-based exposure.
+
+      Evidence expectations: a firm should be able to show, for a sample of alerts, that the
+      scenario was tuned to its risk profile, that the disposition was reviewed by a competent
+      person, that outcomes are fed back into tuning, and that senior management receives
+      meaningful MI. The "we have a policy" defence has not succeeded in recent enforcement.
+    confidence_note: "Summary of the Handbook rule and published supervisory expectations."
+
+  - doc_id: uk-sars-nca
+    citation: "NCA UKFIU SAR Guidance (and DAML procedural note)"
+    title: "UK SAR submission, quality and consent process"
+    jurisdiction: UK
+    regulator: NCA / UKFIU
+    doc_type: guidance
+    status: in_force
+    effective_from: 2016-01-01
+    source_url: "https://www.nationalcrimeagency.gov.uk/what-we-do/crime-threats/money-laundering-and-illicit-finance/suspicious-activity-reports"
+    tags: [sar, ukfiu, daml, narrative, quality, consent, deadlines]
+    obligations:
+      - "Submit SARs via the UKFIU system with a complete narrative and requested consent where applicable."
+      - "DAML: NCA has 7 working days to respond, extendable by up to 31 calendar days."
+      - "There is no statutory deadline to submit a SAR, but delay must be justified; 'as soon as practicable' applies to internal disclosure."
+    text: |
+      UKFIU guidance sets out how suspicious activity reports are submitted and what makes a good
+      one. A SAR must identify the subjects and the suspicious activity, give a coherent narrative
+      and specify whether a defence or consent is requested. The UK has no fixed statutory filing
+      period, but the internal disclosure must be made as soon as practicable and the subsequent
+      submission must not be delayed without justification; NTAC/UKFIU reporting flags delays.
+
+      Narrative quality is the main reason for rejection. Guidance asks for: the who, what, when
+      and where; why the activity is suspicious, in the reporter's own words; the value and the
+      accounts involved; and whether the reporter needs consent to proceed. Text that merely
+      restates a monitoring alert is not a narrative.
+
+      DAML: on a request for consent, the UKFIU has seven working days to respond. It may extend
+      the moratorium by up to 31 calendar days. The requested-then-refused outcome is itself
+      reportable information for the case file. Note the interaction with the Proceeds of Crime
+      Act: continuing to deal without consent is a criminal offence even where a SAR has been
+      filed, so systems must route consent applications as a distinct workflow with its own clock.
+    confidence_note: "Synthesis of published UKFIU guidance; check current guidance for form changes."
+
+  - doc_id: uk-oFSI-sanctions
+    citation: "Sanctions and Anti-Money Laundering Act 2018 / OFSI guidance"
+    title: "UK sanctions — ownership and control test"
+    jurisdiction: UK
+    regulator: OFSI / FCDO
+    doc_type: statute
+    status: in_force
+    effective_from: 2018-05-23
+    source_url: "https://www.gov.uk/government/publications/financial-sanctions-faqs"
+    tags: [sanctions, ofsi, ownership, control, 50-percent, designation, uk]
+    obligations:
+      - "Screen against the UK Sanctions List; freeze assets of designated persons without delay."
+      - "Apply the ownership and control test, including the ability to control below 50% ownership."
+      - "Report frozen assets to OFSI and consider licences for permitted dealings."
+    text: |
+      The Sanctions and Anti-Money Laundering Act 2018 provides the framework for UK autonomous
+      sanctions. OFSI administers financial sanctions and publishes the consolidated UK Sanctions
+      List. Designated persons' funds and economic resources must be frozen, and no funds or
+      economic resources may be made available, directly or indirectly, to or for their benefit.
+
+      Ownership and control: OFSI's guidance treats an entity as owned or controlled by a
+      designated person where the designated person holds, directly or indirectly, more than 50
+      percent of the shares or voting rights, or holds the right to appoint or remove a majority
+      of the board, or otherwise controls the entity. The test can therefore catch entities below
+      50 percent ownership, unlike the US 50 percent rule, and there is no automatic aggregation
+      across multiple designated persons in the same way as the US regime.
+
+      Reporting: frozen assets must be reported to OFSI, and licences are required for permitted
+      activity (for example legal fees or basic needs). Strict liability applies to breaches.
+      UK and EU regimes increasingly diverge on listings and on the treatment of control, so a
+      group must screen against the union of the US, UK and EU lists and record which test and
+      which list produced the block or rejection.
+    confidence_note: "Summary of the framework and OFSI guidance."

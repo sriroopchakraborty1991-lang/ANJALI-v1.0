@@ -1,0 +1,90 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONUNBUFFERED: "1"
+  PYTHONUTF8: "1"
+  PYTHONIOENCODING: utf-8
+
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip ruff
+      - run: ruff check src tests scripts
+
+  test:
+    name: test ${{ matrix.python-version }} (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.10", "3.11", "3.12"]
+        include:
+          - os: macos-latest
+            python-version: "3.12"
+          - os: windows-latest
+            python-version: "3.12"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+          python -c "import sys, typer, rich, pydantic; print(sys.version); print('typer', typer.__version__); print('pydantic', pydantic.VERSION)"
+
+      - name: Unit and integration tests
+        run: pytest -q
+
+      - name: Build wheel
+        if: matrix.python-version == '3.12' && matrix.os == 'ubuntu-latest'
+        run: |
+          pip install build
+          python -m build --wheel --outdir dist
+
+      - name: Install the wheel into a clean environment
+        if: matrix.python-version == '3.12' && matrix.os == 'ubuntu-latest'
+        run: |
+          python -m venv "$RUNNER_TEMP/wheel-venv"
+          "$RUNNER_TEMP/wheel-venv/bin/python" -m pip install --upgrade pip
+          "$RUNNER_TEMP/wheel-venv/bin/pip" install dist/*.whl
+
+      - name: End-to-end verification of the installed wheel
+        if: matrix.python-version == '3.12' && matrix.os == 'ubuntu-latest'
+        run: "$RUNNER_TEMP/wheel-venv/bin/python scripts/verify_install.py --home \"$RUNNER_TEMP/wheel-home\""
+
+      - name: End-to-end verification of the editable install
+        if: matrix.python-version != '3.12' || matrix.os != 'ubuntu-latest'
+        run: python scripts/verify_install.py --home "$RUNNER_TEMP/editable-home"
+
+      - name: Control-test gate (no detection regressions)
+        if: matrix.python-version == '3.12' && matrix.os == 'ubuntu-latest'
+        env:
+          ANJALI_HOME: ${{ runner.temp }}/anjali-gate
+        run: |
+          rm -rf "$ANJALI_HOME"
+          anjali --quiet init
+          anjali simulate --fail-under 1.0 --json > /dev/null
+          echo "no detection regressions across the 11 injected scenarios"

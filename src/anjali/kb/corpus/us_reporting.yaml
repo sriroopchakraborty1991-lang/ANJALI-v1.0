@@ -1,0 +1,277 @@
+version: 1
+corpus: US-SAR
+documents:
+
+  - doc_id: us-31cfr-1020-320
+    citation: "31 CFR § 1020.320"
+    title: "Reports by banks of suspicious transactions (SAR)"
+    jurisdiction: US
+    regulator: FinCEN
+    doc_type: regulation
+    status: in_force
+    effective_from: 2003-06-01
+    source_url: "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/section-1020.320"
+    tags: [sar, suspicious-activity, 5000, reporting, 30-days, banks]
+    obligations:
+      - "File a SAR for a transaction of $5,000 or more where the bank knows, suspects or has reason to suspect any of the four statutory conditions."
+      - "File within 30 calendar days of initial detection; 60 days where no suspect is identified."
+      - "Review continuing activity at least every 120 days."
+      - "Retain the SAR and supporting documentation for five years."
+    penalties: "Civil money penalties up to statutory maximums per violation (31 USC 5321); criminal under 5322."
+    text: |
+      A bank shall file a report of suspicious transactions when it knows, suspects, or has
+      reason to suspect that a transaction conducted or attempted by, at, or through the bank,
+      aggregates $5,000 or more, and the bank knows, suspects or has reason to suspect that the
+      transaction or pattern of transactions involves funds derived from illegal activity or is
+      intended or conducted in order to hide or disguise funds or assets derived from illegal
+      activity; is designed to evade any regulation under the BSA; has no business or apparent
+      lawful purpose or is not the sort in which the particular customer would normally be
+      expected to engage; or involves use of the bank to facilitate criminal activity.
+
+      The report is filed with FinCEN by completing the SAR form and filing it electronically.
+      Filing is required regardless of whether the transaction was completed, or the customer
+      is identifiable, or the funds involved are cash. The four conditions are disjunctive:
+      satisfying any one is sufficient.
+
+      Salvage value of the "no apparent lawful purpose" limb: it is the most litigated and the
+      most useful. Structuring, unusual velocity, unexplained incoming wires from high-risk
+      jurisdictions, and refusal to explain source of funds all fall inside it. A SAR must not
+      be withheld because the amount is small: the threshold is on the aggregated activity
+      reviewed in the alert, not the single transaction that triggered it.
+    confidence_note: "Paraphrase; four-condition test is standard supervisory interpretation."
+
+  - doc_id: us-31cfr-1022-320
+    citation: "31 CFR § 1022.320"
+    title: "SARs by money services businesses — $2,000 threshold"
+    jurisdiction: US
+    regulator: FinCEN
+    doc_type: regulation
+    status: in_force
+    effective_from: 2003-06-01
+    source_url: "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1022/section-1022.320"
+    tags: [sar, msb, money-services, 2000, money-transmitter, prepaid]
+    obligations:
+      - "File a SAR where transactions aggregate $2,000 or more under the same four conditions."
+    text: |
+      A money services business — including a money transmitter, currency dealer or exchanger,
+      cheque casher, or provider of prepaid access — must file a suspicious activity report when
+      transactions aggregating $2,000 or more meet one of the four conditions in the SAR rule.
+      The lower threshold reflects the retail, high-volume, low-ticket character of the sector
+      and the concentration of layering activity in cash-to-digital conversion.
+
+      Practical consequence for fintech payment providers: a design that only evaluates single
+      transfers will systematically miss the $2,000 aggregation rule. Monitoring should evaluate
+      rolling windows (commonly 90 days for a suspicion decision, 30 days for structuring) and
+      should treat senders and recipients of the same platform as one relationship when
+      beneficial ownership is shared.
+
+      MSBs also carry registration, AML programme, and recordkeeping duties; failure to file an
+      SAR is independently actionable even where the underlying transactions are lawful. Where
+      the platform sponsors a network of independent agents, the principal MSB is responsible
+      for the programme covering the agents' activity.
+    confidence_note: "Paraphrase of 31 CFR 1022.320."
+
+  - doc_id: us-fincen-sar-narrative
+    citation: "FinCEN SAR Narrative Guidance (FFIEC BSA/AML Manual — SAR Narrative)"
+    title: "SAR narrative structure: who, what, when, where, why and how"
+    jurisdiction: US
+    regulator: FinCEN / FFIEC
+    doc_type: guidance
+    status: in_force
+    effective_from: 2003-06-01
+    source_url: "https://bsaaml.ffiec.gov/manual/AssessingComplianceWithBSARecordkeepingRequirements/06"
+    tags: [sar, narrative, writing, who-what-when-where-why-how, quality]
+    obligations:
+      - "Write a complete narrative that stands alone without the supporting documentation."
+      - "Answer who, what, when, where, why and how; state the amounts and dates explicitly."
+    text: |
+      The narrative is the part of the SAR a law enforcement analyst actually reads; an
+      incomplete narrative is treated as a deficient filing even when the coded fields are
+      correct. FinCEN and FFIEC guidance directs filers to produce a complete, chronological,
+      self-contained narrative that answers who, what, when, where, why and how.
+
+      Who: identify subjects, their roles and relationships, account numbers, identifiers,
+      and any known corporate structure. What: describe the activity and why it is suspicious,
+      including the specific transactions, amounts, dates and instruments. When: an explicit
+      date range, and if the activity is ongoing, say so and state the period covered. Where:
+      branches, channels, jurisdictions and countries involved. Why: the reason the activity is
+      out of character — expected versus actual activity, stated business purpose versus observed
+      behaviour, prior filings. How: the mechanism, including payment rails, structuring pattern,
+      layering sequence and the parties used.
+
+      Style rules that matter. Write in plain past tense, third person, without conclusions of
+      law; state facts and the reason for suspicion. Do not include hedging language that
+      suggests the filer is unsure of its own decision. Do not reference another SAR by number.
+      Do not include information that would reveal the filing to the subject. A continuing
+      activity SAR repeats the full narrative for the new period rather than referencing the
+      prior filing. ANJALI generates narratives against this checklist and lists any missing
+      element explicitly.
+    confidence_note: "Synthesis of FFIEC manual guidance; not a verbatim quote."
+
+  - doc_id: us-sar-continuing
+    citation: "31 CFR § 1020.320(b)(3)"
+    title: "Continuing activity SARs — 120-day review cycle"
+    jurisdiction: US
+    regulator: FinCEN
+    doc_type: regulation
+    status: in_force
+    effective_from: 2003-06-01
+    source_url: "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/section-1020.320"
+    tags: [sar, continuing-activity, 120-days, review-cycle]
+    obligations:
+      - "Review continuing suspicious activity at least every 120 calendar days and file a continuing SAR where warranted."
+      - "Decide and document whether to maintain the relationship, with EDD or termination as options."
+    text: |
+      Where a bank files a SAR on a continuing activity, it must report at least every 120
+      calendar days from the date of the prior filing. A continuing activity SAR reports
+      activity that continues after the prior filing and must be filed where the institution
+      determines the activity is still suspicious.
+
+      The review cycle is also a decision point on the customer relationship. Supervisory
+      expectations are that the institution either (a) obtains enhanced due diligence sufficient
+      to explain the activity, (b) restricts products or channels, or (c) exits the relationship,
+      and documents the rationale. Repeatedly filing continuing SARs without any change in
+      controls is a recognised deficiency: it demonstrates knowledge of the activity without a
+      risk-based response.
+
+      ANJALI models the 120-day clock per filing and raises a finding when a continuing SAR is
+      due and when the same typology has been reported three or more cycles without a documented
+      control response.
+    confidence_note: "Paraphrase."
+
+  - doc_id: us-fincen-cvc-advisory
+    citation: "FinCEN Advisory FIN-2019-A003"
+    title: "Advisory on illicit activity involving convertible virtual currency"
+    jurisdiction: US
+    regulator: FinCEN
+    doc_type: advisory
+    status: in_force
+    effective_from: 2019-05-09
+    source_url: "https://www.fincen.gov/sites/default/files/2019-05/FinCEN%20Advisory%20CVC%20FINAL%20508.pdf"
+    tags: [crypto, cvc, virtual-currency, convertible, red-flags, peer-to-peer, mixer]
+    obligations:
+      - "Apply money-transmitter status and BSA obligations to administrators and exchangers of CVC."
+      - "File SARs on CVC activity involving mixers, tumblers, darknet markets or sanctions exposure."
+    text: |
+      This advisory summarises how the BSA applies to convertible virtual currency and sets out
+      red flags. A person who accepts and transmits CVC, or buys or sells CVC as a business, is a
+      money transmitter and must register, maintain an AML programme, keep records, and file SARs.
+      Exchangers and administrators have obligations even when operating entirely in virtual
+      currency without a fiat leg.
+
+      Red flags emphasised in the advisory include: transactions involving CVC mixers or tumblers;
+      use of anonymity-enhanced cryptocurrencies or privacy wallets; rapid conversion between
+      CVC, fiat and prepaid access; structuring of CVC transactions to avoid reporting
+      thresholds or the travel-rule recordkeeping threshold; use of unhosted wallets for
+      layered movements; funds originating from a CVC address associated with darknet markets,
+      ransomware or sanctions-designated actors; and customers who cannot explain the source of
+      their CVC.
+
+      Filing expectations: SARs on CVC activity should identify the CVC involved, the equivalent
+      fiat value at the time of the transaction, wallet or address identifiers where known, and
+      the counterparties and exchanges used. Reporting is required for activity involving
+      sanctioned persons under OFAC rules as well as suspicious activity.
+    confidence_note: "Summary of the advisory; check FinCEN for any later superseding guidance."
+
+  - doc_id: us-fincen-elder-financial-exploitation
+    citation: "FinCEN Advisory — Elder Financial Exploitation (2022)"
+    title: "Elder financial exploitation red flags and reporting expectations"
+    jurisdiction: US
+    regulator: FinCEN
+    doc_type: advisory
+    status: in_force
+    effective_from: 2022-06-15
+    source_url: "https://www.fincen.gov/resources/advisories/fincen-advisory-fin-2022-alert001"
+    tags: [elder-exploitation, vulnerable-customer, red-flags, rights-of-way]
+    obligations:
+      - "Detect and report suspected elder financial exploitation as suspicious activity."
+      - "Record whether a suspicious-activity hold or delay was applied under applicable state safe-harbour law."
+    text: |
+      Elder financial exploitation — the illegal or improper use of an older adult's funds or
+      assets — is a reportable suspicious activity. FinCEN and its partners highlight patterns:
+      a sudden change in account behaviour on an established, low-activity account; large or
+      repeated withdrawals inconsistent with the customer's history; new joint account holders or
+      authorised signers with no apparent relationship; payments to unfamiliar third parties,
+      caregivers or romance or prize scams; uncharacteristic ATM or wire activity by a customer
+      who appears confused or is accompanied by a controlling third party; and repeated,
+      urgent payments framed as emergencies.
+
+      Filing practice: use the SAR field for elder financial exploitation and describe the
+      customer's apparent capacity and the involvement of any third party. Where the institution
+      applies a temporary hold or delay under a state safe-harbour statute, record the statutory
+      basis, the amount held and the duration. These holds are separate from, and additional to,
+      the SAR obligation, and their permissibility varies by state.
+
+      Design note: demographic flags are sensitive data. Detection should use behavioural
+      deviation plus an age attribute held under data-minimisation rules, and every alert must be
+      explainable to a human reviewer, not just to a model.
+    confidence_note: "Synthesis; advisory number and date should be confirmed against FinCEN's advisory index."
+
+  - doc_id: us-31cfr-1010-430
+    citation: "31 CFR § 1010.430"
+    title: "Recordkeeping — five-year retention of BSA records"
+    jurisdiction: US
+    regulator: FinCEN
+    doc_type: regulation
+    status: in_force
+    effective_from: 2003-06-01
+    source_url: "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-D/section-1010.430"
+    tags: [retention, records, five-years, gdpr-conflict, data-minimisation]
+    obligations:
+      - "Retain BSA records for five years; account-opening records for five years after the account closes."
+      - "Make records available to FinCEN and supervisory agencies on request."
+    text: |
+      BSA records must be retained for five years. Records obtained at account opening (including
+      verification records) must be retained for five years after the account is closed. Records
+      of currency transactions, funds transfers, and the identity of the parties must be retained
+      for five years from the date of the transaction. Records must be filed or stored in a way
+      that allows retrieval within a reasonable period, and must be made available to FinCEN, the
+      institution's functional regulator, and law enforcement on request.
+
+      Storage may be in any form (including electronic) provided the record is accurate,
+      retrievable and secure. Retention runs longer where litigation, investigation or a
+      regulatory hold applies, and a hold overrides routine deletion schedules.
+
+      Conflict note: five-year mandatory retention of customer due-diligence data is longer than
+      the storage-limitation principle in GDPR Article 5(1)(e) would normally permit. The lawful
+      basis is legal obligation (Article 6(1)(c)) plus the member-state exemptions for AML
+      (AMLR and AMLD provisions), not the customer's consent. Deleting CDD records at a
+      two-year privacy-schedule anniversary is a BSA violation; keeping them indefinitely
+      without a legal basis is a GDPR violation. The defensible position is a documented,
+      purpose-scoped retention schedule with legal-hold logic.
+    confidence_note: "Paraphrase of 31 CFR 1010.430 plus cross-jurisdiction analysis."
+
+  - doc_id: us-bsa-program-requirements
+    citation: "31 CFR § 1020.210 / 31 USC § 5318(h)"
+    title: "AML programme requirements — five pillars plus customer due diligence"
+    jurisdiction: US
+    regulator: FinCEN / FFIEC
+    doc_type: regulation
+    status: in_force
+    effective_from: 1987-06-01
+    source_url: "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/section-1020.210"
+    tags: [programme, pillars, governance, training, independent-testing, monitoring]
+    obligations:
+      - "Maintain a written programme: internal controls, designation of a compliance officer, training, independent testing, and CDD."
+      - "Cover all agents, subsidiaries and foreign branches where the regulation applies."
+    text: |
+      Covered financial institutions must maintain a written anti-money laundering compliance
+      programme that is reasonably designed to assure and monitor compliance with the BSA. The
+      programme must at a minimum include: a system of internal controls to assure ongoing
+      compliance; independent testing for compliance by internal or external audit; designation of
+      an individual or individuals responsible for coordinating and monitoring day-to-day
+      compliance; training of appropriate personnel; and risk-based procedures for conducting
+      ongoing customer due diligence, including verifying beneficial ownership.
+
+      Supervisory practice turns "reasonably designed" into evidence: is the risk assessment
+      current and board-approved, do monitoring scenarios map to the institution's actual risk
+      profile, are alert dispositions quality-controlled, is independent testing scoped to the
+      highest-risk products, and is the model risk process documented? The 2021 AML Act
+      (Corporate Transparency Act of 2021, Div. F, Title LXIII) added priorities and a
+      whistleblower regime and directed FinCEN to update programme requirements; the five-pillar
+      structure remains the operative baseline.
+
+      ANJALI treats each pillar as a testable control. `anjali simulate` injects adversarial
+      scenarios and reports which pillar failed to detect them, which is the evidence an
+      examiner asks for when testing internal controls.
+    confidence_note: "Paraphrase; AMLA 2020 amendments are noted, not reproduced."

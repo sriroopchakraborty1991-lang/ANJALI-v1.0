@@ -1,0 +1,386 @@
+version: 1
+corpus: FATF
+documents:
+
+  - doc_id: fatf-r1-rba
+    citation: "FATF Recommendation 1 (Risk-based approach)"
+    title: "Assessing risk and applying a risk-based approach"
+    jurisdiction: FATF
+    regulator: FATF
+    doc_type: recommendation
+    status: in_force
+    effective_from: 2012-02-16
+    source_url: "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html"
+    tags: [risk-based-approach, rba, risk-assessment, proportionality, r1]
+    obligations:
+      - "Identify, assess and understand the ML/TF risks to the business and take proportionate measures to mitigate them."
+      - "Higher risks require enhanced measures; lower risks may permit simplified measures, never where suspicion exists."
+    text: |
+      Countries should identify, assess and understand the money laundering and terrorist financing
+      risks for the country and take action, including designating an authority to coordinate the
+      assessment and applying resources proportionate to those risks. Financial institutions and
+      designated non-financial businesses and professions should be required to identify, assess and
+      understand their ML/TF risks for customers, countries, products, services, transactions and
+      delivery channels, and take appropriate measures to manage and mitigate them.
+
+      The risk-based approach is the organising principle of the FATF standards: it treats
+      compliance as the allocation of scarce resources in proportion to risk, rather than as the
+      mechanical application of rules to every customer. Where risk is higher, the institution must
+      apply enhanced due diligence. Where risk is lower, simplified measures are permitted, but
+      simplified measures may never be applied where there is a suspicion of money laundering or
+      terrorist financing.
+
+      The supervisor's test is whether the assessment is *operative*: does the documented risk
+      assessment actually determine monitoring thresholds, sample sizes, review frequency and
+      resourcing? A risk assessment that does not change behaviour fails this test even if it is
+      well written. This is the basis of ANJALI's explainable scoring: every score cites the
+      factors that produced it, so the assessment is auditable against the data.
+    confidence_note: "Summary of R.1 and its interpretative note."
+
+  - doc_id: fatf-r10-cdd
+    citation: "FATF Recommendation 10 (Customer due diligence)"
+    title: "Customer due diligence and ongoing monitoring"
+    jurisdiction: FATF
+    regulator: FATF
+    doc_type: recommendation
+    status: in_force
+    effective_from: 2012-02-16
+    source_url: "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html"
+    tags: [cdd, kyc, beneficial-ownership, ongoing-monitoring, r10, rba]
+    obligations:
+      - "Identify and verify the customer and beneficial owner before or during the establishment of the relationship."
+      - "Understand the purpose and intended nature of the relationship and conduct ongoing due diligence."
+      - "Apply enhanced measures for higher-risk relationships; do not commence where CDD cannot be completed."
+    text: |
+      Financial institutions should be prohibited from keeping anonymous accounts or accounts in
+      obviously fictitious names. They should be required to undertake customer due diligence when
+      establishing business relations; carrying out occasional transactions above the applicable
+      designated threshold (USD/EUR 15,000); carrying out occasional transactions that are wire
+      transfers in the circumstances covered by Recommendation 16; or where there is a suspicion of
+      ML/TF or doubts about previously obtained customer information.
+
+      CDD measures comprise: identifying the customer and verifying identity using reliable,
+      independent source documents, data or information; identifying the beneficial owner and taking
+      reasonable measures to verify identity such that the institution is satisfied it knows who the
+      beneficial owner is, including for legal persons understanding the ownership and control
+      structure; understanding the purpose and intended nature of the business relationship; and
+      conducting ongoing due diligence on the business relationship, scrutinising transactions to
+      ensure they are consistent with the institution's knowledge of the customer, their business and
+      risk profile, and keeping documents, data and information up to date.
+
+      Where CDD cannot be performed, the institution should not open the account, commence the
+      relationship or perform the transaction, and should consider whether to file a suspicious
+      transaction report. Ongoing monitoring is the weakest link in practice: institutions frequently
+      verify at onboarding and never refresh, which leaves stale risk ratings driving thresholds.
+    confidence_note: "Summary of R.10 and the interpretative note."
+
+  - doc_id: fatf-r11-records
+    citation: "FATF Recommendation 11 (Record keeping)"
+    title: "Five-year record retention"
+    jurisdiction: FATF
+    regulator: FATF
+    doc_type: recommendation
+    status: in_force
+    effective_from: 2012-02-16
+    source_url: "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html"
+    tags: [records, retention, five-years, r11, evidence]
+    obligations:
+      - "Retain all necessary records on transactions for at least five years."
+      - "Retain CDD records and business correspondence for at least five years after the relationship ends."
+    text: |
+      Financial institutions should be required to maintain, for at least five years, all necessary
+      records on transactions, both domestic and international, to enable them to comply swiftly
+      with information requests from competent authorities. Such records must be sufficient to
+      permit reconstruction of individual transactions so as to provide, if necessary, evidence for
+      prosecution of criminal activity.
+
+      Financial institutions should be required to keep all customer due diligence records and
+      business correspondence for at least five years after the business relationship has ended, or
+      after the date of the occasional transaction. These requirements should apply to the
+      institution's branches and subsidiaries abroad where local law permits; where local law does
+      not, institutions must apply additional measures and inform the home supervisor.
+
+      Reconstruction is the operative word: a record that shows a balance and an amount but not the
+      counterparty, channel, device or decision rationale does not allow reconstruction. This is the
+      argument for retaining the alert, the scenario that fired, the analyst's disposition and the
+      model inputs alongside the transaction — which is what an audit trail is for.
+    confidence_note: "Summary of R.11."
+
+  - doc_id: fatf-r12-pep
+    citation: "FATF Recommendation 12 (Politically exposed persons)"
+    title: "PEP risk management"
+    jurisdiction: FATF
+    regulator: FATF
+    doc_type: recommendation
+    status: in_force
+    effective_from: 2012-02-16
+    source_url: "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html"
+    tags: [pep, domestic-pep, foreign-pep, edd, source-of-wealth, r12]
+    obligations:
+      - "Apply risk management systems to determine whether a customer or beneficial owner is a PEP."
+      - "For foreign PEPs, obtain senior management approval, establish source of wealth and funds, and conduct enhanced ongoing monitoring."
+    text: |
+      Financial institutions should be required, in relation to foreign politically exposed persons,
+      to have in place appropriate risk management systems to determine whether a customer or
+      beneficial owner is a PEP; obtain senior management approval for establishing or continuing
+      such business relationships; take reasonable measures to establish the source of wealth and
+      source of funds of customers and beneficial owners identified as PEPs; and conduct enhanced
+      ongoing monitoring of the business relationship.
+
+      The 2012 revision extended the requirements to domestic PEPs and to international
+      organisation PEPs, and applied them to family members and close associates. For domestic PEPs
+      the requirement may be applied on a risk-sensitive basis, but the baseline expectation is
+      that they are identified and risk-managed.
+
+      Practical failure modes: PEP screening performed only at onboarding, so a customer appointed
+      to public office later is never re-screened; PEP status determined from a name-only match with
+      no date-of-birth or country corroboration, producing unmanageable false positives; and
+      source-of-wealth statements accepted without corroboration. Re-screening on a scheduled cycle
+      is part of the requirement in substance even where the recommendation text focuses on systems.
+    confidence_note: "Summary of R.12 and interpretative note."
+
+  - doc_id: fatf-r13-correspondent
+    citation: "FATF Recommendation 13 (Correspondent banking)"
+    title: "Correspondent banking due diligence"
+    jurisdiction: FATF
+    regulator: FATF
+    doc_type: recommendation
+    status: in_force
+    effective_from: 2012-02-16
+    source_url: "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html"
+    tags: [correspondent-banking, nostro, nested, payable-through, r13, edd]
+    obligations:
+      - "Gather sufficient information about the respondent institution to understand its business and reputation."
+      - "Assess the respondent's AML/CFT controls and the quality of supervision in its jurisdiction."
+      - "Prohibit relationships with shell banks and require senior management approval for new relationships."
+    text: |
+      In relation to cross-border correspondent banking and other similar relationships, financial
+      institutions should be required, in addition to performing normal CDD, to: gather sufficient
+      information about the respondent institution to understand fully the nature of the respondent's
+      business and to determine from publicly available information the reputation of the institution
+      and the quality of supervision, including whether it has been subject to an ML/TF investigation
+      or regulatory action; assess the respondent institution's AML/CFT controls; obtain approval from
+      senior management before establishing new correspondent relationships; document the respective
+      AML/CFT responsibilities of each institution; and, with respect to payable-through accounts, be
+      satisfied that the respondent has performed CDD on its customers with access to the accounts
+      and can provide relevant CDD information on request.
+
+      Prohibitions: financial institutions should be prohibited from entering into or continuing
+      correspondent relationships with shell banks, and should be required to satisfy themselves that
+      respondents do not permit their accounts to be used by shell banks. Nested relationships — where
+      a respondent provides services to other institutions that then use the correspondent account —
+      require particular scrutiny because they obscure the ultimate originator.
+
+      Control implication: transaction monitoring that keys only on the immediate counterparty will
+      miss nested flows. Payment message analysis should identify the ordering institution, the
+      intermediary and the ultimate beneficiary institution, and should alert when the chain differs
+      from the approved relationship profile.
+    confidence_note: "Summary of R.13."
+
+  - doc_id: fatf-r15-new-tech
+    citation: "FATF Recommendation 15 (New technologies)"
+    title: "New technologies, virtual assets and risk assessment"
+    jurisdiction: FATF
+    regulator: FATF
+    doc_type: recommendation
+    status: in_force
+    effective_from: 2019-02-21
+    source_url: "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html"
+    tags: [new-technologies, virtual-assets, vasp, innovation, r15, emerging-risk]
+    obligations:
+      - "Identify and assess ML/TF risks arising from new products, practices and technologies before launch."
+      - "Regulate and supervise virtual asset service providers; apply the full FATF standards to VASPs."
+    text: |
+      Countries and financial institutions should identify and assess the money laundering and
+      terrorist financing risks that may arise in relation to the development of new products and new
+      business practices, including new delivery mechanisms, and the use of new or developing
+      technologies for both new and pre-existing products. The risk assessment should take place
+      prior to the launch of the new products, business practices or technologies and financial
+      institutions should take appropriate measures to manage and mitigate those risks.
+
+      Since 2019 the recommendation also requires countries to ensure that virtual asset service
+      providers are registered or licensed and subject to the full FATF standards, including CDD,
+      record-keeping, suspicious transaction reporting and the travel rule.
+
+      This is the provision most relevant to deploying an AI system inside a compliance function: an
+      LLM-driven analyst is a "new technology" whose ML/TF risk profile must be assessed before use.
+      The risk is not that the model launders money; it is that the model produces a plausible but
+      wrong clearance decision, or a citation to a repealed provision, at scale and at speed. The
+      mitigation is architectural: retrieval constrained to in-force text, mandatory citations,
+      deterministic rules for threshold logic, and human sign-off before any filing.
+    confidence_note: "Summary of R.15 (2019 revision) and FATF VASP guidance."
+
+  - doc_id: fatf-r16-travel
+    citation: "FATF Recommendation 16 (Wire transfers / travel rule)"
+    title: "Originator and beneficiary information in transfers"
+    jurisdiction: FATF
+    regulator: FATF
+    doc_type: recommendation
+    status: in_force
+    effective_from: 2012-02-16
+    source_url: "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html"
+    tags: [travel-rule, wire-transfer, 1000, originator, beneficiary, r16, virtual-assets]
+    obligations:
+      - "Ensure qualifying wire transfers include required originator and beneficiary information."
+      - "Apply enhanced scrutiny to transfers with missing or incomplete information."
+    text: |
+      Countries should ensure that financial institutions include required and accurate originator
+      information, and required beneficiary information, on wire transfers and related messages, and
+      that the information remains with the wire transfer or related message throughout the payment
+      chain. The designated threshold for applying the rule is USD/EUR 1,000 for cross-border
+      transfers, below which simplified information may travel.
+
+      For cross-border transfers of USD/EUR 1,000 or more, the ordering institution must verify the
+      originator's identity (and, where required, the beneficiary's) and pass on the information. The
+      beneficiary institution must verify the beneficiary's identity where the information is
+      required, and both must have risk-based policies for handling transfers that lack required
+      information — including, where appropriate, suspension of the transfer and consideration of a
+      report.
+
+      The recommendation was extended to virtual asset transfers in 2019, requiring originating and
+      beneficiary VASPs to obtain and transmit specified information. The threshold comparison across
+      regimes is the source of much operational complexity: FATF baseline USD/EUR 1,000; US $3,000
+      under 31 CFR 1010.410(f); EU zero threshold between CASPs under Regulation (EU) 2023/1113.
+    confidence_note: "Summary of R.16 and its interpretative note."
+
+  - doc_id: fatf-r20-str
+    citation: "FATF Recommendation 20 (Reporting of suspicious transactions)"
+    title: "Suspicious transaction reporting and tipping-off"
+    jurisdiction: FATF
+    regulator: FATF
+    doc_type: recommendation
+    status: in_force
+    effective_from: 2012-02-16
+    source_url: "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html"
+    tags: [str, sar, reporting, tipping-off, fiu, r20]
+    obligations:
+      - "Require institutions to report suspicious transactions promptly to the FIU."
+      - "Protect reporting institutions from criminal and civil liability for good-faith reporting."
+      - "Prohibit tipping off the subject of the report."
+    text: |
+      Countries should require financial institutions, and where applicable DNFBPs, to report
+      suspicious transactions promptly to the financial intelligence unit when they suspect or have
+      reasonable grounds to suspect that funds are the proceeds of a criminal activity or are related
+      to terrorist financing.
+
+      All suspicious transactions, including attempted transactions, should be reported regardless of
+      the amount of the transaction. The reporting obligation is on the institution, and good-faith
+      reporting should be protected by law from criminal and civil liability for breach of any
+      restriction on disclosure of information. Tipping off the subject of the report should be
+      prohibited.
+
+      Two operational consequences. First, "attempted" matters: a blocked or abandoned attempt to send
+      funds to a sanctioned or suspicious counterparty is reportable, and monitoring that only
+      evaluates settled transactions will miss it. Second, the good-faith safe harbour is what makes
+      over-reporting acceptable — but it does not protect the institution from a *failure* to report,
+      so the risk-adjusted position is that suspicion should be escalated rather than suppressed on
+      the grounds that the activity may have a legitimate explanation.
+    confidence_note: "Summary of R.20 and R.21."
+
+  - doc_id: fatf-r6-7-sanctions
+    citation: "FATF Recommendations 6 and 7 (Targeted financial sanctions)"
+    title: "Implementation of targeted financial sanctions without delay"
+    jurisdiction: FATF
+    regulator: FATF
+    doc_type: recommendation
+    status: in_force
+    effective_from: 2012-02-16
+    source_url: "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html"
+    tags: [targeted-sanctions, tfs, unscr-1267, 1373, freezing, without-delay, r6, r7]
+    obligations:
+      - "Freeze without delay the funds of persons designated under UNSC Resolutions 1267 and 1373."
+      - "Prohibit making funds or economic resources available, directly or indirectly, to designated persons."
+      - "Have mechanisms to delist and to authorise access to frozen funds for basic expenses."
+    text: |
+      Recommendation 6 requires countries to implement targeted financial sanctions regimes to comply
+      with United Nations Security Council Resolutions relating to the prevention and suppression of
+      terrorism and terrorist financing, specifically Resolution 1267 (1989/1999) and its successor
+      regimes, and Resolution 1373. Recommendation 7 covers proliferation financing, principally the
+      UNSC resolutions on Iran and the Democratic People's Republic of Korea.
+
+      "Without delay" is interpreted by FATF as ideally immediately upon designation and, where a
+      jurisdiction's mechanism requires an administrative step, as promptly as possible without prior
+      notice. Designated persons' funds must be frozen, and no funds or economic resources may be made
+      available directly or indirectly, to or for their benefit. Countries must also have mechanisms
+      to delist, to authorise access to frozen funds for basic and extraordinary expenses, and to
+      allow humanitarian exemptions in line with UNSC resolutions.
+
+      Control expectation: list updates must be ingested and screened against existing customers
+      within the same business day. A nightly batch that finishes at 06:00 is not "without delay" for
+      a designation published at 09:00 the previous day. The monitoring system's list-refresh latency
+      is therefore a measurable control, and ANJALI records the list version used for each screening
+      call so a decision can be reconstructed against the list in force at that moment.
+    confidence_note: "Summary of R.6/R.7 and the 2016/2022 revisions."
+
+  - doc_id: fatf-tbml
+    citation: "FATF/APG Trade-Based Money Laundering (typologies, 2006 and 2020 updates)"
+    title: "Trade-based money laundering typologies and red flags"
+    jurisdiction: FATF
+    regulator: FATF / APG
+    doc_type: guidance
+    status: in_force
+    effective_from: 2006-06-01
+    source_url: "https://www.fatf-gafi.org/en/publications/Methodsandtrends/Trade-based-money-laundering.html"
+    tags: [tbml, trade-finance, over-invoicing, under-invoicing, carousel, red-flags]
+    obligations:
+      - "Incorporate TBML red flags into trade-finance and payment monitoring."
+      - "Compare declared values and quantities with market prices and with the customer's trade profile."
+    text: |
+      Trade-based money laundering moves value across borders through the misrepresentation of the
+      price, quantity or quality of goods and services, in order to transfer value and obscure its
+      origin. FATF and the Asia/Pacific Group identified the core techniques and red flags in 2006,
+      with updated typologies in 2020.
+
+      Primary techniques: over-invoicing (importing goods at inflated prices to move value out);
+      under-invoicing (exporting at deflated prices, or importing at deflated prices to avoid duties);
+      multiple invoicing of the same goods; short-shipping or over-shipping versus the invoice; and
+      falsely described goods or services, including the use of service payments that have no
+      identifiable counterpart.
+
+      Red flags: payments that do not match the stated goods or the customer's business; a trade
+      pattern inconsistent with the customer's known business; use of letters of credit to settle
+      transactions between parties that are apparently unrelated but share addresses or ownership;
+      repeated changes to shipping routes or payment terms without commercial explanation; goods whose
+      stated unit price diverges materially from world market benchmarks; round-value invoices;
+      third-party payments from unrelated jurisdictions; and shipment documents that are photocopies
+      or otherwise not verifiable.
+
+      Detection design: TBML is fundamentally a data-join problem. It requires comparing invoice
+      amounts against quantity and a benchmark price, and comparing the trade counterparties against
+      the customer's ownership graph. ANJALI's TBML detector implements price-versus-benchmark
+      deviation and counterparty novelty, and flags carousel patterns where goods return to the
+      origin jurisdiction.
+    confidence_note: "Synthesis of FATF/APG typologies reports."
+
+  - doc_id: fatf-digital-id
+    citation: "FATF Guidance on Digital Identity (2020)"
+    title: "Digital identity and reliable, independent verification"
+    jurisdiction: FATF
+    regulator: FATF
+    doc_type: guidance
+    status: in_force
+    effective_from: 2020-03-01
+    source_url: "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Digital-identity-guidance.html"
+    tags: [digital-identity, onboarding, verification, non-face-to-face, rba, kyc]
+    obligations:
+      - "Use digital ID systems for CDD only where they provide reliable, independent identification and verification."
+      - "Assess assurance level and the risk of identity spoofing, especially in non-face-to-face onboarding."
+    text: |
+      FATF guidance clarifies when digital identity systems can be used to perform CDD. The
+      touchstone remains the standard in Recommendation 10: identification and verification must use
+      reliable, independent source documents, data or information. A digital identity system can meet
+      that standard if its assurance level is appropriate to the risk, and the institution remains
+      responsible for the decision even where it relies on a third-party provider.
+
+      The guidance sets out how to assess reliability (the quality and security of the identity
+      evidence and the processes that bind an identity to a person) and independence (the source of
+      the data and the degree of control the customer has over it). Non-face-to-face onboarding,
+      synthetic identity fraud, deepfakes and document forgery are identified as the principal
+      threats, and liveness detection and document authentication are treated as controls that must
+      be validated rather than assumed.
+
+      Practical implication: reliance on a digital ID provider does not transfer the obligation.
+      Institutions should document the provider's assurance level, test its performance against
+      known synthetic identities, and retain the evidence returned by the provider for each customer
+      so that the decision can be reconstructed.
+    confidence_note: "Summary of the guidance."

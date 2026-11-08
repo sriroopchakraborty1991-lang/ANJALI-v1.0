@@ -1,0 +1,256 @@
+# ANJALI-AI sanctions seed list — TEST FIXTURE, NOT AN OPERATIONAL LIST
+#
+# These entries are SYNTHETIC. They are shaped like real list records (aliases,
+# transliterations, dates of birth, programmes) so that matching, corroboration and the
+# 50% ownership rule can be demonstrated and unit-tested. No real designated person is
+# represented here, and nothing in this file may be used for an actual screening decision.
+#
+# Load an operational list with:
+#   anjali sanctions import ofac_sdn --file sdn.csv --list-name "OFAC SDN"
+#   anjali sanctions import eu_consolidated --file eu_cons.csv
+list_version: "2026.11-demo"
+synthetic: true
+
+entries:
+  - list: OFAC SDN
+    list_id: SDN-37001
+    name: Mohammed Al-Rashid
+    aliases:
+      - Muhammad Al Rashid
+      - Mohamed Al Rachid
+      - Mohammed Abdul Al-Rashid
+    entity_type: individual
+    country: SY
+    dob: 1971-03-14
+    programme: SDGT
+    remarks: "Synthetic fixture for transliteration matching."
+
+  - list: OFAC SDN
+    list_id: SDN-37002
+    name: Viktor Petrov
+    aliases: [Viktor Petrov-Sokolov, Victor Petrov, V. Petrov]
+    entity_type: individual
+    country: RU
+    dob: 1968-11-02
+    programme: UKRAINE-EO14024
+    remarks: "Synthetic fixture."
+
+  - list: EU Consolidated
+    list_id: EU-91003
+    name: Dmitri Sokolov
+    aliases: [Dmitry Sokolov, D. Sokolov]
+    entity_type: individual
+    country: RU
+    dob: 1975-07-19
+    programme: "EU 269/2014"
+    remarks: "Synthetic fixture."
+
+  - list: UN Consolidated
+    list_id: UN-QDi.045
+    name: Ahmed Bin Salim
+    aliases: [Ahmad bin Salim, Ahmed B. Salim, Salim Ahmed]
+    entity_type: individual
+    country: YE
+    dob: 1980-01-30
+    programme: QDe.137
+    remarks: "Synthetic fixture."
+
+  - list: UK OFSI
+    list_id: OFSI-45010
+    name: Fatima Al-Zahra
+    aliases: [Fatima Al Zahra, Fatema Alzahra]
+    entity_type: individual
+    country: IR
+    dob: 1966-09-09
+    programme: "Iran (Sanctions) (EU Exit) Regulations 2019"
+    remarks: "Synthetic fixture."
+
+  - list: OFAC SDN
+    list_id: SDN-37003
+    name: Ivan Volkov
+    aliases: [Ivan Volkov-Smirnov, I. Volkov]
+    entity_type: individual
+    country: BY
+    dob: 1979-05-23
+    programme: BELARUS-EO14038
+    remarks: "Synthetic fixture."
+
+  - list: OFAC SDN
+    list_id: SDN-37004
+    name: Ravi Menon
+    aliases: [Ravindra Menon, R. Menon]
+    entity_type: individual
+    country: IN
+    dob: 1985-06-02
+    programme: SDNTK
+    remarks: "Synthetic fixture — same name as the demo customer, different DOB/country, to exercise corroboration logic."
+
+  - list: OFAC SDN
+    list_id: SDN-37005
+    name: Ali Hassan Kareem
+    aliases: [Ali Hasan Karim, A. H. Kareem]
+    entity_type: individual
+    country: IQ
+    dob: 1973-12-11
+    programme: SDGT
+    remarks: "Synthetic fixture."
+
+  - list: OFAC SDN
+    list_id: SDN-37006
+    name: Sunrise Trading FZE
+    aliases: [Sunrise Trading F.Z.E., Sunrise Trading LLC]
+    entity_type: entity
+    country: AE
+    dob: null
+    programme: SDGT
+    remarks: "Synthetic fixture."
+
+  - list: OFAC SDN
+    list_id: SDN-37007
+    name: Golden Lotus Holdings Ltd
+    aliases: [Golden Lotus Holding Limited, Golden Lotus Holdings]
+    entity_type: entity
+    country: HK
+    dob: null
+    programme: SDNTK
+    remarks: "Synthetic fixture."
+
+  - list: EU Consolidated
+    list_id: EU-91010
+    name: Blue Star Logistics LLC
+    aliases: [Blue Star Logistics Ltd, Bluestar Logistics]
+    entity_type: entity
+    country: RU
+    dob: null
+    programme: "EU 269/2014"
+    remarks: "Synthetic fixture."
+
+  - list: OFAC SDN
+    list_id: SDN-37008
+    name: Meridian Capital Partners SA
+    aliases: [Meridian Capital Partner S.A., Meridian Capital]
+    entity_type: entity
+    country: PA
+    dob: null
+    programme: SDNTK
+    remarks: "Synthetic fixture."
+
+  - list: OFAC SDN
+    list_id: SDN-37009
+    name: Northwind Commodities SAL
+    aliases: [Northwind Commodities, North Wind Commodities SAL]
+    entity_type: entity
+    country: LB
+    dob: null
+    programme: SDGT
+    remarks: "Synthetic fixture."
+
+  - list: UK OFSI
+    list_id: OFSI-45021
+    name: Crescent Moon Trading FZE
+    aliases: [Crescent Moon Trading, Crescent Moon FZE]
+    entity_type: entity
+    country: AE
+    dob: null
+    programme: "Global Human Rights (EU Exit) Regulations 2020"
+    remarks: "Synthetic fixture."
+
+  - list: EU Consolidated
+    list_id: EU-91030
+    name: Volga Industrial Group
+    aliases: [Volga Industrial Holding, Volga Group]
+    entity_type: entity
+    country: RU
+    dob: null
+    programme: "EU 269/2014"
+    remarks: "Synthetic fixture."
+
+  - list: UN Consolidated
+    list_id: UN-QDi.061
+    name: Hassan Ibrahim Qureshi
+    aliases: [Hasan Ibrahim Qureshi, H. I. Qureshi]
+    entity_type: individual
+    country: PK
+    dob: 1988-04-07
+    programme: QDi.061
+    remarks: "Synthetic fixture."
+
+  - list: OFAC SDN
+    list_id: SDN-37010
+    name: Nikolai Orlov
+    aliases: [Nikolay Orlov, N. Orlov]
+    entity_type: individual
+    country: RU
+    dob: 1962-02-15
+    programme: RUSSIA-EO14024
+    remarks: "Synthetic fixture."
+
+  - list: OFAC SDN
+    list_id: SDN-37011
+    name: Zhang Wei Chen
+    aliases: [Chen Wei Zhang, Wei Chen, W. Z. Chen]
+    entity_type: individual
+    country: CN
+    dob: 1970-08-21
+    programme: SDNTK
+    remarks: "Synthetic fixture."
+
+  - list: EU Consolidated
+    list_id: EU-91044
+    name: Adriatic Shipping doo
+    aliases: [Adriatic Shipping d.o.o., Adriatic Shipping]
+    entity_type: entity
+    country: RS
+    dob: null
+    programme: "EU 269/2014"
+    remarks: "Synthetic fixture."
+
+  - list: UK OFSI
+    list_id: OFSI-45033
+    name: Kestrel Advisory Services Ltd
+    aliases: [Kestrel Advisory Services Limited, Kestrel Advisory]
+    entity_type: entity
+    country: GB
+    dob: null
+    programme: "Russia (Sanctions) (EU Exit) Regulations 2019"
+    remarks: "Synthetic fixture."
+
+  - list: OFAC SDN
+    list_id: SDN-37012
+    name: Nassar Import Export Inc
+    aliases: [Nassar Import & Export Inc, Nassar Impex]
+    entity_type: entity
+    country: TR
+    dob: null
+    programme: SYRIA
+    remarks: "Synthetic fixture."
+
+  - list: OFAC SDN
+    list_id: SDN-37013
+    name: Alejandro Vargas
+    aliases: [Alejandro Vargas-Rojas, A. Vargas]
+    entity_type: individual
+    country: MX
+    dob: 1983-10-05
+    programme: SDNTK
+    remarks: "Synthetic fixture."
+
+  - list: EU Consolidated
+    list_id: EU-91050
+    name: Black Sea Maritime Ltd
+    aliases: [Black Sea Maritime Limited, Blacksea Maritime]
+    entity_type: entity
+    country: RU
+    dob: null
+    programme: "EU 269/2014"
+    remarks: "Synthetic fixture."
+
+  - list: UN Consolidated
+    list_id: UN-TAi.009
+    name: Qasim Al-Farsi
+    aliases: [Qasem Al Farsi, Q. Al-Farsi]
+    entity_type: individual
+    country: SY
+    dob: 1976-06-18
+    programme: QDi.009
+    remarks: "Synthetic fixture."

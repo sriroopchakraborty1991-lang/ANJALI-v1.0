@@ -1,0 +1,302 @@
+# ANJALI-AI regulatory corpus — United States BSA/AML core obligations
+#
+# Analyst summaries for retrieval — not verbatim reproductions. Each entry carries
+# source_url + confidence_note. `anjali kb verify` re-checks the edition in force on a
+# given date. Confirm against official text before filing.
+version: 1
+corpus: US-BSA-AML
+documents:
+
+  - doc_id: us-31cfr-1010-311
+    citation: "31 CFR § 1010.311"
+    title: "Filing obligations for reports of transactions in currency (CTR)"
+    jurisdiction: US
+    regulator: FinCEN
+    doc_type: regulation
+    status: in_force
+    effective_from: 2003-06-01
+    source_url: "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-C/section-1010.311"
+    tags: [ctr, currency, threshold, 10000, reporting, cash]
+    obligations:
+      - "File a CTR for each transaction in currency exceeding $10,000 in one business day."
+      - "Aggregate multiple currency transactions by or for the same person in one business day."
+    penalties: "Civil money penalties (31 USC 5321); criminal penalties (31 USC 5322)."
+    text: |
+      A financial institution shall file a report of each deposit, withdrawal, exchange of
+      currency or other payment or transfer, by, through, or to the institution, which
+      involves a transaction in currency of more than $10,000, aggregated as required by
+      § 1010.313. Multiple transactions are treated as a single transaction when the
+      institution has knowledge that they are by or on behalf of the same person and total
+      more than $10,000 during any one business day. Reports are filed electronically with
+      FinCEN within 15 calendar days after the transaction date.
+
+      Control design notes. The threshold applies to physical currency only: a $9,000 cash
+      deposit plus a $5,000 cheque is not a reportable currency transaction, whereas two
+      $6,000 cash deposits on the same day for the same beneficial owner are. Exemptions
+      exist for certain established customers (31 CFR § 1020.315) but are unavailable to
+      non-listed businesses and to accounts with structuring history. Failure to aggregate
+      is the single most common CTR deficiency in examinations: reporting systems must key
+      on the beneficial owner and the business day, not on the account number.
+    confidence_note: "Paraphrase of codified text; verify the current eCFR edition."
+
+  - doc_id: us-31cfr-1010-313
+    citation: "31 CFR § 1010.313"
+    title: "Aggregation of currency transactions"
+    jurisdiction: US
+    regulator: FinCEN
+    doc_type: regulation
+    status: in_force
+    effective_from: 2003-06-01
+    source_url: "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-C/section-1010.313"
+    tags: [aggregation, ctr, structuring, same person, business day]
+    obligations:
+      - "Aggregate currency transactions by or on behalf of one person across all branches on a business day."
+      - "Aggregation is knowledge-based, not system-default; deliberate blindness is not a defence."
+    text: |
+      Multiple currency transactions shall be treated as a single transaction if the
+      financial institution has knowledge that they are by or on behalf of any person and
+      result in either cash in or cash out totalling more than $10,000 during any one
+      business day. Where a customer uses more than one branch, aggregation is across the
+      institution, not per branch or per teller. Institution-wide aggregation of a single
+      customer's activity is required when the institution has knowledge of the
+      relationship.
+
+      Detection implication for monitoring builds: the aggregation key must be the
+      customer (and where known, the beneficial owner), scoped to a business day in the
+      institution's local time zone, with cash-in and cash-out evaluated as separate
+      totals. Aggregating only per-account systematically under-reports multi-account
+      behaviour and is a recurring finding in FinCEN and OCC examinations.
+    confidence_note: "Paraphrase of codified text."
+
+  - doc_id: us-31cfr-1010-314
+    citation: "31 CFR § 1010.314"
+    title: "Structuring transactions to evade reporting requirements"
+    jurisdiction: US
+    regulator: FinCEN
+    doc_type: regulation
+    status: in_force
+    effective_from: 2003-06-01
+    source_url: "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-C/section-1010.314"
+    tags: [structuring, smurfing, evasion, ctr, 10000, typology, criminal]
+    obligations:
+      - "No person may structure, assist in structuring, or attempt to structure a transaction to evade reporting."
+      - "Institutions must detect, escalate and report structuring even where no separate predicate offence exists."
+    penalties: "Criminal liability under 31 USC 5324; asset forfeiture under 18 USC 981."
+    text: |
+      No person shall for the purpose of evading the reporting requirements of section 5313
+      of title 31 or any regulation thereunder structure or assist in structuring, or attempt
+      to structure or assist in structuring, any transaction with one or more domestic
+      financial institutions. A person structures when, with the intent to evade a currency
+      reporting requirement, the person conducts or attempts to conduct one or more
+      transactions in currency, in any amount, at one or more financial institutions, on one
+      or more days.
+
+      Structuring is a *standalone* offence: it is reportable even where the underlying funds
+      are legitimate. Indicators include repeated cash deposits or withdrawals clustered just
+      below a reporting threshold; patterns designed to keep a running total under $10,000
+      across branches, accounts or related parties; splitting a single payment into several
+      same-day transactions; asking staff what the reporting threshold is; and abrupt changes
+      in cash behaviour after a prior CTR.
+
+      A suspicious activity report is required where the institution knows, suspects, or has
+      reason to suspect that a transaction was designed to evade BSA requirements
+      (31 CFR § 1020.320(a)(2)). Note that intent matters for the criminal offence, but the
+      SAR standard permits filing on reasonable suspicion of structuring without proving
+      intent — and the number of transactions below the threshold is irrelevant if the
+      pattern supports an inference of evasion.
+    confidence_note: "Paraphrase of codified text; the four-part structuring test is settled case law."
+
+  - doc_id: us-31usc-5324
+    citation: "31 USC § 5324"
+    title: "Structuring — criminal prohibition and civil forfeiture"
+    jurisdiction: US
+    regulator: US Congress
+    doc_type: statute
+    status: in_force
+    effective_from: 1986-10-27
+    source_url: "https://www.law.cornell.edu/uscode/text/31/5324"
+    tags: [structuring, criminal, intent, forfeiture, statute]
+    obligations:
+      - "Prohibits structuring to evade reporting, including causing or attempting to cause a domestic financial institution to fail to file."
+    penalties: "Up to 5 years imprisonment and fines; up to 10 years where committed while violating another law or in a pattern of illegal activity."
+    text: |
+      No person shall, for the purpose of evading the reporting requirements of section 5313(a)
+      or 5325, or any regulation prescribed under any such section, structure or assist in
+      structuring, or attempt to structure or assist in structuring, any transaction with one
+      or more domestic financial institutions. The section also prohibits causing or
+      attempting to cause a domestic financial institution to fail to file a report, to file a
+      report containing a material omission or misstatement, or to structure a transaction.
+
+      Penalties reach up to five years' imprisonment, or ten years where the structuring is
+      committed while violating another law of the United States or as part of a pattern of
+      illegal activity involving more than $100,000 in a twelve-month period. Funds involved
+      in a violation are subject to civil forfeiture under 18 USC § 981(a)(1)(A).
+
+      Compliance consequence: an institution that helps a customer split deposits to stay
+      under the threshold, or that designs a product to avoid reporting, may itself violate
+      the statute. Front-line scripts, teller prompts and mobile-deposit limits that
+      intentionally suppress reporting are a governance risk, not a convenience feature.
+    confidence_note: "Summary of the statutory text."
+
+  - doc_id: us-31cfr-1010-306
+    citation: "31 CFR § 1010.306"
+    title: "Filing of reports — deadlines for CTR and SAR"
+    jurisdiction: US
+    regulator: FinCEN
+    doc_type: regulation
+    status: in_force
+    effective_from: 2003-06-01
+    source_url: "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-C/section-1010.306"
+    tags: [deadline, sar, ctr, filing, 30 days, 15 days]
+    obligations:
+      - "CTR: file within 15 calendar days of the transaction date."
+      - "SAR: file within 30 calendar days of initial detection (60 days where no suspect is identified)."
+      - "Retain a copy of each filed report for five years."
+    text: |
+      Reports of transactions in currency must be filed within 15 calendar days after the date
+      of the transaction. Reports of suspicious activity must be filed within 30 calendar days
+      after the date of initial detection of facts that may constitute a basis for filing, and
+      within 60 calendar days where no suspect is identified. Where a SAR is filed on a
+      continuing activity, the institution must report at least every 120 calendar days.
+
+      Initial detection means the date the institution becomes aware of facts that may be a
+      basis for filing, not the date the investigation concludes. Examination findings
+      frequently turn on this distinction: long internal review cycles before escalation are
+      treated as late filing. A copy of every filed report must be retained for five years from
+      the date of filing.
+
+      Operational control: the filing clock should be started by an automated alert
+      acknowledgement, recorded in an immutable audit log, and displayed on a compliance
+      dashboard with a countdown. ANJALI records the detection timestamp for every finding so
+      the clock is provable.
+    confidence_note: "Paraphrase; deadlines are stable but confirm current eCFR."
+
+  - doc_id: us-31usc-5318g2
+    citation: "31 USC § 5318(g)(2)"
+    title: "SAR confidentiality — prohibition on disclosure (tipping off)"
+    jurisdiction: US
+    regulator: US Congress
+    doc_type: statute
+    status: in_force
+    effective_from: 1992-12-17
+    source_url: "https://www.law.cornell.edu/uscode/text/31/5318"
+    tags: [confidentiality, tipping-off, sar, disclosure, group-sharing, conflict]
+    obligations:
+      - "No financial institution, or director, officer, employee or agent may notify any person involved in the transaction that it was reported."
+      - "Disclosure is permitted to FinCEN and to appropriate law enforcement and supervisory agencies."
+    penalties: "Civil penalties and criminal liability for unauthorised disclosure."
+    text: |
+      If a financial institution or any director, officer, employee or agent of the institution,
+      or any other person, knowingly notifies any person involved in the transaction that it
+      has been reported under subsection (g), the institution shall be liable for a civil
+      penalty. The prohibition applies to directors, officers, employees and agents, and
+      survives the end of the customer relationship.
+
+      The safe harbour permits disclosure to FinCEN, to an appropriate law enforcement or
+      supervisory agency, and to another financial institution under the section 314(b)
+      sharing framework. Crucially, the US rule does not contain a general intra-group
+      exception: disclosure to a foreign parent, affiliate or branch outside the 314(b)
+      framework is not authorised merely because they are part of the same corporate group.
+
+      This is a live cross-border conflict. EU and UK law permit (and in some cases require)
+      disclosure of a suspicious-activity report within the group to the parent and to
+      group-wide compliance functions. A US-licensed entity in that group may not mirror the
+      disclosure. Resolution: document a jurisdictional split in the group AML policy, route
+      EU/UK reports through a separately incorporated non-US compliance function, and log
+      any near-miss disclosure. See ANJALI `conflicts resolve tipping-off`.
+    confidence_note: "Summary of statutory text; compare AMLD6 and POCA 2002 s333A for the conflict."
+
+  - doc_id: us-31cfr-1010-520
+    citation: "31 CFR § 1010.520"
+    title: "Section 314(a) information sharing requests"
+    jurisdiction: US
+    regulator: FinCEN
+    doc_type: regulation
+    status: in_force
+    effective_from: 2002-03-29
+    source_url: "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-E/section-1010.520"
+    tags: [314a, information-sharing, law-enforcement, search, deadline]
+    obligations:
+      - "Designate a point of contact for 314(a) requests and search records on receipt."
+      - "Respond to FinCEN within the period stated in the request (commonly 14 days)."
+    text: |
+      FinCEN may require a financial institution to search its records to determine whether it
+      maintains or has maintained accounts for, or has engaged in transactions with, a
+      specified individual, entity or organisation. Institutions must designate a point of
+      contact, maintain procedures to search records, and report matches to FinCEN. The
+      request itself is confidential: institutions may not disclose to the subject that a
+      search was performed or that a match was reported.
+
+      Records to be searched are defined broadly to include account holder and transaction
+      records, not only the customer master. A match does not itself prove illicit activity,
+      but supported matches must be reported and the underlying activity assessed for SAR
+      obligations. FinCEN publishes the request list on a periodic cycle and institutions are
+      expected to search within the stated window; repeated late responses are a supervisory
+      finding.
+    confidence_note: "Paraphrase of 31 CFR 1010.520 and the 314(a) programme."
+
+  - doc_id: us-31cfr-1010-540
+    citation: "31 CFR § 1010.540"
+    title: "Section 314(b) voluntary information sharing among financial institutions"
+    jurisdiction: US
+    regulator: FinCEN
+    doc_type: regulation
+    status: in_force
+    effective_from: 2002-03-29
+    source_url: "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1010/subpart-E/section-1010.540"
+    tags: [314b, information-sharing, safe-harbor, typology, group]
+    obligations:
+      - "Register with FinCEN before sharing under 314(b)."
+      - "Take reasonable steps to verify the counterparty is a registered financial institution."
+      - "Use shared information solely for identifying and reporting money laundering or terrorist activity."
+    text: |
+      Two or more financial institutions that are not within the same corporate group may share
+      information regarding individuals, entities, organisations and countries suspected of
+      possible terrorist activity or money laundering, provided each has registered with FinCEN
+      and each has taken reasonable steps to verify the other is registered. The safe harbour
+      protects the sharing institutions from liability for disclosure, including for the
+      notification prohibition in 31 USC 5318(g)(2).
+
+      Sharing is limited to purposes of identifying and reporting money laundering or terrorist
+      activity, and the information may not be used for marketing, credit decisions or any other
+      commercial purpose. Institutions must maintain adequate procedures to protect the
+      confidentiality of the information and to guard against unauthorised use, and must
+      document the registration verification. Sharing within the same corporate group falls
+      outside 314(b) and is governed by internal group policy and, where relevant, foreign law.
+
+      Operational note: 314(b) is the lawful route by which a US institution may discuss a
+      suspicious customer with a non-affiliated institution — for example a correspondent or a
+      payments partner — when investigating layering across institutions. ANJALI records the
+      counterparty registration check in the audit trail.
+    confidence_note: "Paraphrase of the 314(b) framework."
+
+  - doc_id: us-31usc-5318a
+    citation: "31 USC § 5318A / 31 CFR Part 1010 Subpart F"
+    title: "Section 311 special measures for jurisdictions of primary money laundering concern"
+    jurisdiction: US
+    regulator: FinCEN / US Treasury
+    doc_type: statute
+    status: in_force
+    effective_from: 2001-10-26
+    source_url: "https://www.law.cornell.edu/uscode/text/31/5318A"
+    tags: [311, special-measures, jurisdiction, correspondent, high-risk]
+    obligations:
+      - "Apply special measures within the scope and effective date of each Treasury order."
+      - "Screen for prohibited account, correspondent and payable-through relationships."
+    text: |
+      Where the Secretary determines that a jurisdiction, financial institution, class of
+      transaction or type of account is of primary money laundering concern, the Secretary may
+      impose one or more special measures by order. Measures range from recordkeeping and
+      reporting requirements, to obtaining information on beneficial ownership, to prohibitions
+      on opening or maintaining correspondent or payable-through accounts.
+
+      Special measures are jurisdiction- and entity-specific and change by order, so the
+      applicable set must be resolved as of the transaction date. Institutions must screen for
+      both the named jurisdiction and, where the order so provides, the entity. Orders may
+      require termination of existing relationships within a stated period, and continuing
+      relationships after that date are violations even without a new transaction.
+
+      Detection implication: this is a temporal-update problem, not a static list. ANJALI's
+      corpus stores each 311 order with its effective dates and resolves the applicable set at
+      the as-of date, flagging counterparties whose risk posture changed with an order.
+    confidence_note: "Paraphrase of statute; individual 311 orders must be read separately."
